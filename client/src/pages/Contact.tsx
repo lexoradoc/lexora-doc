@@ -34,7 +34,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "الهاتف",
-    value: "+964 XXX XXX XXXX",
+    value: "07807437788",
     color: "bg-emerald-50 text-emerald-600",
   },
   {

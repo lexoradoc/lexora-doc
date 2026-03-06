@@ -176,6 +176,105 @@ export default function CCG() {
         </div>
       </section>
 
+      {/* Import File Review Section */}
+      <section className="py-24">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Right side - Content */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <motion.div variants={fadeUp} custom={0}>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 mb-6">
+                  <FileSearch className="w-3.5 h-3.5 text-gold-500" />
+                  <span className="text-gold-600 text-xs font-semibold">فحص مسبق</span>
+                </span>
+              </motion.div>
+
+              <motion.h2
+                variants={fadeUp}
+                custom={1}
+                className="text-3xl font-bold text-navy-900 mb-5 leading-tight"
+              >
+                فحص ملف الاستيراد قبل التقديم
+              </motion.h2>
+
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="text-navy-500 text-base leading-relaxed mb-8"
+              >
+                يساعدك دليل الامتثال التجاري (CCG) على مراجعة وتنظيم مستندات ملف
+                الاستيراد قبل بدء الإجراءات، بهدف تحسين وضوح الوثائق وتقليل الأخطاء
+                في البيانات المرتبطة بالمعاملات التجارية.
+              </motion.p>
+
+              <motion.div variants={fadeUp} custom={3}>
+                <Button
+                  size="lg"
+                  className="bg-gold-500 hover:bg-gold-400 text-navy-950 font-semibold px-8 h-12 text-sm"
+                  onClick={() => window.location.href = '/contact'}
+                >
+                  طلب مراجعة الملف
+                  <ArrowLeft className="w-4 h-4 ms-2" />
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Left side - Checklist */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <motion.div
+                variants={fadeUp}
+                custom={1}
+                className="bg-navy-900 rounded-3xl p-8 lg:p-10 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(196,163,90,0.1),transparent_60%)]" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    قبل التقديم، تأكد من:
+                  </h3>
+                  <p className="text-navy-400 text-sm mb-6">
+                    قائمة المراجعة الأساسية لملف الاستيراد
+                  </p>
+                  <div className="space-y-4">
+                    {[
+                      "وضوح الفاتورة التجارية ومطابقتها للبيانات",
+                      "إرفاق مستندات الشحن",
+                      "صحة البيانات المرتبطة بالمعاملة",
+                      "تنظيم المستندات داخل الملف",
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5"
+                      >
+                        <div className="w-6 h-6 rounded-lg bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-gold-400" />
+                        </div>
+                        <span className="text-navy-200 text-sm font-medium leading-relaxed">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <p className="text-navy-400 text-xs leading-relaxed">
+                      يساهم تنظيم المستندات ومراجعتها مسبقاً في إعداد ملف واضح ومنظم
+                      قبل تقديمه إلى الجهات المعنية.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24">
         <div className="container">

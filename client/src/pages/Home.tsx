@@ -19,6 +19,13 @@ import {
   Building2,
   Users,
   Scale,
+  Briefcase,
+  UserCheck,
+  Landmark,
+  TrendingUp,
+  AlertTriangle,
+  Clock,
+  ThumbsUp,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -185,7 +192,7 @@ export default function Home() {
             >
               <span className="text-blue-400">Lexora</span>
               <br />
-              الوثائق والأعمال
+              منصة الوثائق والامتثال التجاري
             </motion.h1>
 
             <motion.p
@@ -195,9 +202,7 @@ export default function Home() {
               custom={2}
               className="text-lg text-navy-300 leading-relaxed mb-8 max-w-2xl"
             >
-              منصة متخصصة في إعداد الوثائق والمراسلات الرسمية، مع قسم متخصص في
-              الامتثال التجاري (CCG) لمراجعة وتنظيم ملفات الاستيراد والمعاملات
-              المرتبطة بالتحويلات المصرفية.
+              إعداد الوثائق ومراجعة ملفات الاستيراد وفق تعليمات البنك المركزي العراقي.
             </motion.p>
 
             <motion.div
@@ -209,19 +214,26 @@ export default function Home() {
             >
               <Button
                 size="lg"
+                className="bg-gold-500 hover:bg-gold-400 text-navy-950 font-semibold px-6 h-12 text-sm"
+                onClick={() => window.location.href = '/contact'}
+              >
+                طلب مراجعة ملف
+                <ArrowLeft className="w-4 h-4 ms-2" />
+              </Button>
+              <Button
+                size="lg"
                 className="bg-white text-navy-900 hover:bg-navy-50 font-semibold px-6 h-12 text-sm"
                 onClick={() => window.location.href = '/ccg'}
               >
                 تعرف على CCG
-                <ArrowLeft className="w-4 h-4 ms-2" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white/20 text-white hover:bg-white/10 font-semibold px-6 h-12 text-sm bg-transparent"
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => window.location.href = '/services'}
               >
-                ابدأ الآن
+                استعرض الخدمات
               </Button>
             </motion.div>
           </div>
@@ -430,6 +442,177 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHO BENEFITS SECTION ===== */}
+      <section className="py-24">
+        <div className="container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            custom={0}
+            className="text-center mb-16"
+          >
+            <span className="text-xs font-semibold text-gold-600 tracking-wider uppercase mb-3 block">
+              الفئات المستفيدة
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
+              من يستفيد من خدمات CCG؟
+            </h2>
+            <p className="text-navy-500 max-w-xl mx-auto">
+              خدمات دليل الامتثال التجاري مصممة لتلبية احتياجات مختلف الجهات والأفراد
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Building2,
+                title: "الشركات المستوردة",
+                description: "الشركات التي تتعامل مع عمليات الاستيراد وتحتاج لتنظيم ملفاتها التجارية وفقاً للمتطلبات التنظيمية.",
+                color: "bg-blue-50 text-blue-600",
+              },
+              {
+                icon: Briefcase,
+                title: "أصحاب الأعمال",
+                description: "رواد الأعمال وأصحاب المشاريع التجارية الذين يرغبون في ضمان توافق مستنداتهم مع التعليمات.",
+                color: "bg-emerald-50 text-emerald-600",
+              },
+              {
+                icon: UserCheck,
+                title: "الموظفون الإداريون",
+                description: "الموظفون المسؤولون عن إعداد وتنظيم الملفات التجارية والوثائق الرسمية داخل المؤسسات.",
+                color: "bg-violet-50 text-violet-600",
+              },
+              {
+                icon: Landmark,
+                title: "الجهات التجارية",
+                description: "الجهات التجارية التي تحتاج لمراجعة ملفات الاستيراد والتأكد من توافقها مع المتطلبات الرقابية.",
+                color: "bg-amber-50 text-amber-600",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={fadeUp}
+                custom={i + 1}
+                className="bg-white rounded-2xl border border-navy-100 p-7 hover:border-navy-200 hover:shadow-lg hover:shadow-navy-900/5 transition-all duration-300 text-center"
+              >
+                <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mx-auto mb-5`}>
+                  <item.icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-lg font-bold text-navy-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-navy-500 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHY FILE REVIEW MATTERS SECTION ===== */}
+      <section className="py-24 bg-navy-50/50">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <motion.span
+                variants={fadeUp}
+                custom={0}
+                className="text-xs font-semibold text-gold-600 tracking-wider uppercase mb-3 block"
+              >
+                أهمية المراجعة
+              </motion.span>
+              <motion.h2
+                variants={fadeUp}
+                custom={1}
+                className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6 leading-tight"
+              >
+                لماذا مراجعة الملف قبل التقديم مهمة؟
+              </motion.h2>
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="text-navy-500 text-base leading-relaxed mb-8"
+              >
+                تنظيم الملف ومراجعته قبل التقديم يساهم في تجنب الأخطاء الشائعة
+                ويضمن وضوح الوثائق وتوافقها مع المتطلبات التنظيمية، مما يسرّع
+                الإجراءات ويقلل من احتمالية الرفض أو التأخير.
+              </motion.p>
+              <motion.div variants={fadeUp} custom={3}>
+                <Button
+                  size="lg"
+                  className="bg-navy-900 hover:bg-navy-800 text-white font-semibold px-6 h-12 text-sm"
+                  onClick={() => window.location.href = '/ccg'}
+                >
+                  تعرف على خدمة CCG
+                  <ArrowLeft className="w-4 h-4 ms-2" />
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            <div className="space-y-5">
+              {[
+                {
+                  icon: AlertTriangle,
+                  title: "تقليل الأخطاء",
+                  description: "المراجعة المسبقة تكشف الأخطاء في البيانات والمستندات قبل التقديم للجهات المعنية.",
+                  color: "bg-red-50 text-red-600",
+                },
+                {
+                  icon: Clock,
+                  title: "تسريع الإجراءات",
+                  description: "الملف المنظم والواضح يساعد في تسريع عملية المراجعة وتقليل وقت الانتظار.",
+                  color: "bg-blue-50 text-blue-600",
+                },
+                {
+                  icon: TrendingUp,
+                  title: "تحسين الامتثال",
+                  description: "ضمان توافق المستندات مع تعليمات البنك المركزي والمتطلبات التنظيمية ذات العلاقة.",
+                  color: "bg-emerald-50 text-emerald-600",
+                },
+                {
+                  icon: ThumbsUp,
+                  title: "زيادة فرص القبول",
+                  description: "الملف المرتب والمكتمل يزيد من احتمالية قبول المعاملة من المرة الأولى.",
+                  color: "bg-amber-50 text-amber-600",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={fadeUp}
+                  custom={i + 1}
+                  className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-navy-100 hover:shadow-md transition-all duration-300"
+                >
+                  <div className={`w-11 h-11 rounded-xl ${item.color} flex items-center justify-center flex-shrink-0`}>
+                    <item.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-navy-900 text-sm mb-1">
+                      {item.title}
+                    </h4>
+                    <p className="text-navy-500 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

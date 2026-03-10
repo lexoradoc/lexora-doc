@@ -28,7 +28,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "البريد الإلكتروني",
-    value: "info@lexora.iq",
+    value: "info@lexoradoc.com",
     color: "bg-blue-50 text-blue-600",
   },
   {
@@ -197,7 +197,7 @@ export default function Contact() {
                   <h3 className="font-bold text-navy-900 text-sm mb-1">
                     {info.title}
                   </h3>
-                  <p className="text-navy-500 text-sm" dir={info.title === "الهاتف" || info.title === "البريد الإلكتروني" ? "ltr" : "rtl"}>
+                  <p className="text-navy-500 text-sm" dir={info.title === "الهاتف" || info.title === "البريد الإلكتروني" ? "ltr" : "rtl"} style={{direction: 'ltr'}}>
                     {info.value}
                   </p>
                 </motion.div>

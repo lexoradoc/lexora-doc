@@ -25,12 +25,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">L</span>
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                Lexora
-              </span>
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663385768314/YKetDnvZqOPJicMm.jpg" 
+                alt="Lexora Logo"
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-navy-400 text-sm leading-relaxed max-w-md">
               منصة رقمية متخصصة في إعداد الوثائق والمراسلات الرسمية للأعمال، مع

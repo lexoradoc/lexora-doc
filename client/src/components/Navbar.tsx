@@ -52,12 +52,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 no-underline">
-            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${showLight ? 'bg-white/20 backdrop-blur-sm' : 'bg-navy-900'}`}>
-              <span className="text-white font-bold text-sm">L</span>
-            </div>
-            <span className={`text-xl font-bold tracking-tight transition-colors ${showLight ? 'text-white' : 'text-navy-900'}`}>
-              Lexora
-            </span>
+            <img 
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663385768314/YKetDnvZqOPJicMm.jpg" 
+              alt="Lexora Logo"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}

@@ -10,11 +10,12 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Pages with dark hero backgrounds where nav text should be white
-const darkHeroPages = ["/", "/ccg"];
+const darkHeroPages = ["/", "/ccg", "/asycuda-services"];
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/ccg", label: "CCG" },
+  { href: "/asycuda-services", label: "خدمات ASYCUDA" },
   { href: "/services", label: "الخدمات" },
   { href: "/templates", label: "القوالب" },
   { href: "/blog", label: "المدونة" },

@@ -6,24 +6,17 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import AsycudaServices from "./pages/AsycudaServices";
-import CCG from "./pages/CCG";
 import Services from "./pages/Services";
-import Templates from "./pages/Templates";
-import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/asycuda-services"} component={AsycudaServices} />
-      <Route path="/ccg" component={CCG} />
       <Route path="/services" component={Services} />
-      <Route path="/templates" component={Templates} />
-      <Route path="/blog" component={Blog} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />

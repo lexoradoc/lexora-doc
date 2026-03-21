@@ -1,38 +1,30 @@
 /*
- * Design: Clean Tech Platform — Lexora Home Page
- * Navy primary, white bg, blue accents, gold for CCG
- * Sections: Hero, Features, CCG Highlight, Workflow, Why Lexora, FAQ
+ * LEXORA DOC — الصفحة الرئيسية
+ * ASYCUDA محورياً، بدون CCG وقوالب
+ * كحلي (#2D2F8F) + ذهبي (#B8972A)
+ * موجّه للبيع والتحويل عبر واتساب
  */
 import { Button } from "@/components/ui/button";
 import {
   FileText,
-  LayoutTemplate,
-  ShieldCheck,
-  Send,
-  Search,
-  FolderOpen,
-  ClipboardList,
   CheckCircle2,
-  ChevronDown,
   ArrowLeft,
-  Sparkles,
-  Building2,
-  Users,
-  Scale,
-  Briefcase,
-  UserCheck,
-  Landmark,
-  TrendingUp,
-  AlertTriangle,
+  MessageCircle,
+  Shield,
   Clock,
-  ThumbsUp,
+  Users,
+  Star,
+  ChevronDown,
+  Zap,
+  Award,
+  Phone,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "wouter";
 
+const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20ASYCUDA";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/hero-bg-mCVedue9GUhHgV9aPreJro.webp";
-const CCG_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/ccg-section-TVjQLfxercE29fCCbHyTg4.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -43,108 +35,78 @@ const fadeUp = {
   }),
 };
 
-const features = [
+const asycudaServices = [
   {
     icon: FileText,
-    title: "إعداد الوثائق الرسمية",
-    description:
-      "إعداد وصياغة الوثائق والمراسلات الرسمية بطريقة احترافية ومنظمة تتوافق مع المعايير المعتمدة.",
-    color: "bg-blue-50 text-blue-600",
+    title: "إعداد البيان الكمركي المسبق",
+    description: "تحضير وصياغة البيان المسبق بدقة عالية وفقاً لمتطلبات نظام ASYCUDA العالمي.",
   },
   {
-    icon: LayoutTemplate,
-    title: "القوالب الجاهزة",
-    description:
-      "مكتبة متكاملة من القوالب الجاهزة للكتب الرسمية والتقارير والعقود ونماذج الموارد البشرية.",
-    color: "bg-emerald-50 text-emerald-600",
+    icon: Shield,
+    title: "مراجعة ملفات الاستيراد",
+    description: "فحص شامل لجميع مستندات الاستيراد والتأكد من مطابقتها لتعليمات البنك المركزي العراقي.",
   },
   {
-    icon: ShieldCheck,
-    title: "الامتثال التجاري (CCG)",
-    description:
-      "مراجعة وتنظيم ملفات الاستيراد والمعاملات المصرفية وفقاً لتعليمات البنك المركزي العراقي.",
-    color: "bg-amber-50 text-amber-600",
-  },
-];
-
-const workflowSteps = [
-  { icon: Send, label: "إرسال المستندات", step: "01" },
-  { icon: Search, label: "مراجعة الملفات", step: "02" },
-  { icon: FolderOpen, label: "تنظيم الوثائق", step: "03" },
-  { icon: ClipboardList, label: "إعداد الملاحظات", step: "04" },
-  { icon: CheckCircle2, label: "تسليم الملف", step: "05" },
-];
-
-const whyLexora = [
-  {
-    icon: Scale,
-    title: "منهجية واضحة",
-    description: "منهجية واضحة في تنظيم الوثائق ومراجعتها",
+    icon: CheckCircle2,
+    title: "تدقيق الفواتير والمستندات",
+    description: "مراجعة الفواتير التجارية والتحقق من تطابقها مع المتطلبات التنظيمية.",
   },
   {
-    icon: Sparkles,
-    title: "صياغة احترافية",
-    description: "صياغة احترافية للمراسلات الرسمية",
+    icon: Zap,
+    title: "تسريع إجراءات التخليص",
+    description: "تنظيم الملفات وتجهيزها بشكل احترافي لتسريع إجراءات التخليص الجمركي.",
   },
   {
-    icon: ShieldCheck,
-    title: "التركيز على الامتثال",
-    description: "التركيز على الامتثال التجاري والمتطلبات التنظيمية",
+    icon: Award,
+    title: "الامتثال للمعايير الدولية",
+    description: "ضمان توافق جميع المستندات مع معايير ASYCUDA World والمتطلبات الدولية.",
   },
   {
     icon: Users,
-    title: "دعم شامل",
-    description: "دعم الشركات والأفراد في إدارة المستندات",
+    title: "دعم الشركات والمستوردين",
+    description: "خدمة متكاملة للشركات والأفراد في إدارة ملفات الاستيراد والتصدير.",
   },
 ];
 
-const faqItems = [
+const stats = [
+  { value: "+500", label: "ملف معالج" },
+  { value: "+200", label: "عميل راضٍ" },
+  { value: "98%", label: "نسبة النجاح" },
+  { value: "24h", label: "وقت الاستجابة" },
+];
+
+const faqs = [
   {
-    question: "ما هو CCG؟",
-    answer:
-      "CCG هو دليل الامتثال التجاري، وهو قسم متخصص في مراجعة وتنظيم ملفات الاستيراد والمعاملات المرتبطة بالتحويلات المصرفية.",
+    question: "ما هو نظام ASYCUDA؟",
+    answer: "ASYCUDA (Automated System for Customs Data) هو نظام آلي لبيانات الجمارك تستخدمه هيئة الجمارك العراقية لمعالجة البيانات الجمركية وتسهيل التجارة الدولية.",
   },
   {
-    question: "هل تعتمد الخدمة على تعليمات البنك المركزي العراقي؟",
-    answer:
-      "نعم، تعتمد عملية تنظيم الملفات على مراجعة المستندات بما يتوافق مع تعليمات البنك المركزي العراقي والمتطلبات التنظيمية ذات العلاقة.",
+    question: "كيف يمكنني البدء بطلب الخدمة؟",
+    answer: "يمكنك التواصل معنا مباشرة عبر واتساب أو ملء نموذج الطلب في صفحة ASYCUDA. سيتواصل معك فريقنا خلال 24 ساعة.",
   },
   {
-    question: "هل تقدم المنصة اعتماداً رسمياً؟",
-    answer:
-      "لا، تقدم المنصة خدمات مراجعة وتنظيم الوثائق فقط. المنصة لا تمثل جهة حكومية ولا تقدم خدمات اعتماد رسمي.",
+    question: "ما هي المستندات المطلوبة؟",
+    answer: "تشمل المستندات الأساسية: الفاتورة التجارية، بوليصة الشحن، شهادة المنشأ، وأي مستندات خاصة بطبيعة البضاعة. سيرشدك فريقنا بحسب كل حالة.",
   },
   {
-    question: "ما هي الخدمات التي تقدمها Lexora؟",
-    answer:
-      "تقدم Lexora ثلاث خدمات رئيسية: إعداد الوثائق والمراسلات الرسمية، القوالب الجاهزة للوثائق، ودليل الامتثال التجاري (CCG) لمراجعة وتنظيم ملفات الاستيراد.",
-  },
-  {
-    question: "هل يمكن للأفراد الاستفادة من خدمات المنصة؟",
-    answer:
-      "نعم، تهدف المنصة إلى مساعدة كل من الأفراد والشركات على إعداد الوثائق الرسمية وتنظيم المستندات ومراجعة ملفات الاستيراد.",
+    question: "كم يستغرق إعداد الملف؟",
+    answer: "يتراوح وقت الإعداد بين 24-48 ساعة حسب تعقيد الملف واكتمال المستندات المقدمة.",
   },
 ];
 
-function FAQItem({ item }: { item: (typeof faqItems)[0] }) {
+function FAQItem({ item }: { item: (typeof faqs)[0] }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className={`border rounded-xl overflow-hidden transition-all duration-300 ${open ? 'border-blue-200 bg-blue-50/30 shadow-sm' : 'border-navy-100 hover:border-navy-200'}`}>
+    <div className={`border rounded-xl overflow-hidden transition-all duration-300 ${open ? "border-[#2D2F8F]/30 shadow-sm" : "border-gray-200 hover:border-[#2D2F8F]/20"}`}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-5 text-start bg-transparent transition-colors"
+        className="w-full flex items-center justify-between p-5 text-start bg-transparent"
       >
-        <span className={`font-semibold text-sm transition-colors ${open ? 'text-blue-700' : 'text-navy-900'}`}>{item.question}</span>
-        <ChevronDown
-          className={`w-4 h-4 transition-transform duration-300 flex-shrink-0 ms-3 ${open ? 'rotate-180 text-blue-500' : 'text-navy-400'}`}
-        />
+        <span className={`font-semibold text-sm transition-colors ${open ? "text-[#2D2F8F]" : "text-gray-800"}`}>{item.question}</span>
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 flex-shrink-0 ms-3 ${open ? "rotate-180 text-[#2D2F8F]" : "text-gray-400"}`} />
       </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
-      >
-        <p className="px-5 pb-5 text-navy-500 text-sm leading-relaxed">
-          {item.answer}
-        </p>
+      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
+        <p className="px-5 pb-5 text-gray-500 text-sm leading-relaxed">{item.answer}</p>
       </div>
     </div>
   );
@@ -152,634 +114,286 @@ function FAQItem({ item }: { item: (typeof faqItems)[0] }) {
 
 export default function Home() {
   return (
-    <div>
-      {/* ===== HERO SECTION ===== */}
+    <div dir="rtl">
+      {/* ===== HERO ===== */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        {/* Background */}
         <div className="absolute inset-0">
-          <img
-            src={HERO_BG}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-navy-950/95 via-navy-950/85 to-navy-950/70" />
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-l from-[#1a1c5e]/95 via-[#2D2F8F]/85 to-[#1a1c5e]/70" />
         </div>
 
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
-
-        <div className="container relative z-10 pt-24 pb-16">
-          <div className="max-w-3xl">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={0}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-6"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-navy-200 text-xs font-medium">
-                منصة الوثائق والامتثال التجاري
+        <div className="container relative z-10 pt-28 pb-24">
+          <motion.div initial="hidden" animate="visible" className="max-w-3xl">
+            <motion.div variants={fadeUp} custom={0}>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/20 border border-[#B8972A]/40 mb-6">
+                <Award className="w-3.5 h-3.5 text-[#B8972A]" />
+                <span className="text-[#B8972A] text-xs font-semibold">الخبراء في نظام ASYCUDA العراق</span>
               </span>
             </motion.div>
 
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={1}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
-            >
-              <span className="text-blue-400">Lexora</span>
-              <br />
-              منصة الوثائق والامتثال التجاري
+            <motion.h1 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              خبراء إعداد ملفات{" "}
+              <span className="text-[#B8972A]">ASYCUDA</span>{" "}
+              الجمركية في العراق
             </motion.h1>
 
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={2}
-              className="text-lg text-navy-300 leading-relaxed mb-8 max-w-2xl"
-            >
-              إعداد الوثائق ومراجعة ملفات الاستيراد وفق تعليمات البنك المركزي العراقي.
+            <motion.p variants={fadeUp} custom={2} className="text-lg text-white/75 leading-relaxed mb-8 max-w-2xl">
+              نُعدّ ملفات الاستيراد والبيانات الجمركية بدقة احترافية وفق متطلبات نظام ASYCUDA وتعليمات البنك المركزي العراقي. سرعة وضمان وامتثال كامل.
             </motion.p>
 
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={3}
-              className="flex flex-wrap gap-3"
-            >
-              <Button
-                size="lg"
-                className="bg-gold-500 hover:bg-gold-400 text-navy-950 font-semibold px-6 h-12 text-sm"
-                onClick={() => window.location.href = '/contact'}
+            <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#20bd5a] transition-all shadow-lg no-underline"
               >
-                طلب مراجعة ملف
-                <ArrowLeft className="w-4 h-4 ms-2" />
-              </Button>
-              <Button
-                size="lg"
-                className="bg-white text-navy-900 hover:bg-navy-50 font-semibold px-6 h-12 text-sm"
-                onClick={() => window.location.href = '/ccg'}
+                <MessageCircle className="w-5 h-5" />
+                تواصل عبر واتساب الآن
+              </a>
+              <Link
+                href="/asycuda-services"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/30 text-white font-semibold text-base hover:bg-white/20 transition-all no-underline"
               >
-                تعرف على CCG
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 font-semibold px-6 h-12 text-sm bg-transparent"
-                onClick={() => window.location.href = '/services'}
-              >
-                استعرض الخدمات
-              </Button>
+                تعرف على خدماتنا
+                <ArrowLeft className="w-5 h-5" />
+              </Link>
             </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
-      </section>
-
-      {/* ===== FEATURES SECTION ===== */}
-      <section className="py-24">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            custom={0}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-semibold text-blue-600 tracking-wider uppercase mb-3 block">
-              خدماتنا
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
-              حلول متكاملة للوثائق والأعمال
-            </h2>
-            <p className="text-navy-500 max-w-xl mx-auto">
-              نقدم مجموعة من الخدمات المتخصصة لمساعدتك في إعداد وتنظيم الوثائق
-              الرسمية والتجارية
-            </p>
           </motion.div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUp}
-                custom={i + 1}
-                className="group relative bg-white rounded-2xl border border-navy-100 p-8 hover:border-navy-200 hover:shadow-xl hover:shadow-navy-900/8 transition-all duration-300 hover:-translate-y-1"
-              >
-                {/* Top accent bar */}
-                <div className={`absolute top-0 inset-x-0 h-1 rounded-t-2xl ${feature.title.includes('CCG') ? 'bg-gradient-to-l from-gold-500 to-gold-400' : feature.title.includes('قوالب') ? 'bg-gradient-to-l from-emerald-500 to-emerald-400' : 'bg-gradient-to-l from-blue-500 to-blue-400'}`} />
-                <div
-                  className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center mb-6`}
-                >
-                  <feature.icon className="w-7 h-7" />
+        {/* Stats Bar */}
+        <div className="absolute bottom-0 left-0 right-0 bg-black/20 backdrop-blur-sm border-t border-white/10">
+          <div className="container py-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {stats.map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-2xl font-bold text-[#B8972A]">{stat.value}</div>
+                  <div className="text-white/60 text-xs mt-0.5">{stat.label}</div>
                 </div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-navy-500 text-sm leading-relaxed mb-6">
-                  {feature.description}
-                </p>
-                <div>
-                  <Link
-                    href={feature.title.includes("CCG") ? "/ccg" : "/services"}
-                    className="text-sm font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1.5 no-underline group-hover:gap-2.5 transition-all"
-                  >
-                    اعرف المزيد
-                    <ArrowLeft className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CCG HIGHLIGHT SECTION ===== */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={CCG_BG}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-navy-950/90" />
-        </div>
-
-        <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <motion.div variants={fadeUp} custom={0}>
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-500/30 mb-6">
-                  <ShieldCheck className="w-3.5 h-3.5 text-gold-400" />
-                  <span className="text-gold-400 text-xs font-semibold">
-                    الخدمة الرئيسية
-                  </span>
-                </span>
-              </motion.div>
-
-              <motion.h2
-                variants={fadeUp}
-                custom={1}
-                className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight"
-              >
-                CCG — دليل الامتثال التجاري
-              </motion.h2>
-
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                className="text-navy-300 text-lg leading-relaxed mb-8"
-              >
-                يساعد هذا القسم في مراجعة وتنظيم ملفات الاستيراد والمعاملات
-                المرتبطة بالتحويلات المصرفية، وفقاً لتعليمات البنك المركزي
-                العراقي والمتطلبات التنظيمية ذات العلاقة.
-              </motion.p>
-
-              <motion.div variants={fadeUp} custom={3}>
-                <Button
-                  size="lg"
-                  className="bg-gold-500 hover:bg-gold-400 text-navy-950 font-semibold px-6 h-12 text-sm"
-                  onClick={() => window.location.href = '/ccg'}
-                >
-                  استكشف CCG
-                  <ArrowLeft className="w-4 h-4 ms-2" />
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              className="space-y-4"
-            >
-              {[
-                "مراجعة ملفات الاستيراد",
-                "تدقيق الفواتير التجارية",
-                "مطابقة المستندات الأساسية",
-                "مراجعة بيانات التحويلات المصرفية",
-                "تنظيم الملفات قبل التقديم",
-              ].map((item, i) => (
-                <motion.div
-                  key={item}
-                  variants={fadeUp}
-                  custom={i + 1}
-                  className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-colors"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-gold-500/20 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-gold-400" />
-                  </div>
-                  <span className="text-white font-medium text-sm">{item}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== WORKFLOW SECTION ===== */}
-      <section className="py-24 bg-navy-50/50">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            custom={0}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-semibold text-blue-600 tracking-wider uppercase mb-3 block">
-              آلية العمل
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
-              كيف نعمل
-            </h2>
-            <p className="text-navy-500 max-w-xl mx-auto">
-              خمس خطوات بسيطة لتنظيم ومراجعة وثائقك بشكل احترافي
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-            {workflowSteps.map((step, i) => (
-              <motion.div
-                key={step.label}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUp}
-                custom={i + 1}
-                className="relative text-center group"
-              >
-                {/* Connector line */}
-                {i < workflowSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -left-3 w-6 h-px bg-navy-200" />
-                )}
-                <div className="bg-white rounded-2xl border border-navy-100 p-6 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-                  <span className="text-[11px] font-bold text-blue-500 mb-3 block tracking-wider">
-                    {step.step}
-                  </span>
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50/70 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
-                    <step.icon className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h4 className="font-semibold text-navy-900 text-sm">
-                    {step.label}
-                  </h4>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== WHO BENEFITS SECTION ===== */}
-      <section className="py-24">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            custom={0}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-semibold text-gold-600 tracking-wider uppercase mb-3 block">
-              الفئات المستفيدة
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
-              من يستفيد من خدمات CCG؟
-            </h2>
-            <p className="text-navy-500 max-w-xl mx-auto">
-              خدمات دليل الامتثال التجاري مصممة لتلبية احتياجات مختلف الجهات والأفراد
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Building2,
-                title: "الشركات المستوردة",
-                description: "الشركات التي تتعامل مع عمليات الاستيراد وتحتاج لتنظيم ملفاتها التجارية وفقاً للمتطلبات التنظيمية.",
-                color: "bg-blue-50 text-blue-600",
-              },
-              {
-                icon: Briefcase,
-                title: "أصحاب الأعمال",
-                description: "رواد الأعمال وأصحاب المشاريع التجارية الذين يرغبون في ضمان توافق مستنداتهم مع التعليمات.",
-                color: "bg-emerald-50 text-emerald-600",
-              },
-              {
-                icon: UserCheck,
-                title: "الموظفون الإداريون",
-                description: "الموظفون المسؤولون عن إعداد وتنظيم الملفات التجارية والوثائق الرسمية داخل المؤسسات.",
-                color: "bg-violet-50 text-violet-600",
-              },
-              {
-                icon: Landmark,
-                title: "الجهات التجارية",
-                description: "الجهات التجارية التي تحتاج لمراجعة ملفات الاستيراد والتأكد من توافقها مع المتطلبات الرقابية.",
-                color: "bg-amber-50 text-amber-600",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUp}
-                custom={i + 1}
-                className="bg-white rounded-2xl border border-navy-100 p-7 hover:border-navy-200 hover:shadow-lg hover:shadow-navy-900/5 transition-all duration-300 text-center"
-              >
-                <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mx-auto mb-5`}>
-                  <item.icon className="w-7 h-7" />
-                </div>
-                <h3 className="text-lg font-bold text-navy-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-navy-500 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== WHY FILE REVIEW MATTERS SECTION ===== */}
-      <section className="py-24 bg-navy-50/50">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <motion.span
-                variants={fadeUp}
-                custom={0}
-                className="text-xs font-semibold text-gold-600 tracking-wider uppercase mb-3 block"
-              >
-                أهمية المراجعة
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                custom={1}
-                className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6 leading-tight"
-              >
-                لماذا مراجعة الملف قبل التقديم مهمة؟
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                className="text-navy-500 text-base leading-relaxed mb-8"
-              >
-                تنظيم الملف ومراجعته قبل التقديم يساهم في تجنب الأخطاء الشائعة
-                ويضمن وضوح الوثائق وتوافقها مع المتطلبات التنظيمية، مما يسرّع
-                الإجراءات ويقلل من احتمالية الرفض أو التأخير.
-              </motion.p>
-              <motion.div variants={fadeUp} custom={3}>
-                <Button
-                  size="lg"
-                  className="bg-navy-900 hover:bg-navy-800 text-white font-semibold px-6 h-12 text-sm"
-                  onClick={() => window.location.href = '/ccg'}
-                >
-                  تعرف على خدمة CCG
-                  <ArrowLeft className="w-4 h-4 ms-2" />
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            <div className="space-y-5">
-              {[
-                {
-                  icon: AlertTriangle,
-                  title: "تقليل الأخطاء",
-                  description: "المراجعة المسبقة تكشف الأخطاء في البيانات والمستندات قبل التقديم للجهات المعنية.",
-                  color: "bg-red-50 text-red-600",
-                },
-                {
-                  icon: Clock,
-                  title: "تسريع الإجراءات",
-                  description: "الملف المنظم والواضح يساعد في تسريع عملية المراجعة وتقليل وقت الانتظار.",
-                  color: "bg-blue-50 text-blue-600",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "تحسين الامتثال",
-                  description: "ضمان توافق المستندات مع تعليمات البنك المركزي والمتطلبات التنظيمية ذات العلاقة.",
-                  color: "bg-emerald-50 text-emerald-600",
-                },
-                {
-                  icon: ThumbsUp,
-                  title: "زيادة فرص القبول",
-                  description: "الملف المرتب والمكتمل يزيد من احتمالية قبول المعاملة من المرة الأولى.",
-                  color: "bg-amber-50 text-amber-600",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
-                  variants={fadeUp}
-                  custom={i + 1}
-                  className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-navy-100 hover:shadow-md transition-all duration-300"
-                >
-                  <div className={`w-11 h-11 rounded-xl ${item.color} flex items-center justify-center flex-shrink-0`}>
-                    <item.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-navy-900 text-sm mb-1">
-                      {item.title}
-                    </h4>
-                    <p className="text-navy-500 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </motion.div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== WHY LEXORA SECTION ===== */}
-      <section className="py-24">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <motion.span
-                variants={fadeUp}
-                custom={0}
-                className="text-xs font-semibold text-blue-600 tracking-wider uppercase mb-3 block"
-              >
-                لماذا Lexora
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                custom={1}
-                className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6"
-              >
-                منصة موثوقة لإدارة الوثائق والامتثال
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                className="text-navy-500 leading-relaxed mb-8"
-              >
-                تعد Lexora منصة رقمية تهدف إلى مساعدة الأفراد والشركات على إعداد
-                الوثائق الرسمية والمراسلات الإدارية بطريقة منظمة واحترافية.
-              </motion.p>
-
-              {/* Stats row */}
-              <motion.div variants={fadeUp} custom={2.5} className="flex gap-8 mb-8">
-                {[
-                  { value: "٥٠٠+", label: "شركة مستفيدة" },
-                  { value: "١٠,٠٠٠+", label: "وثيقة تمت مراجعتها" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-2xl font-bold text-navy-900">{stat.value}</div>
-                    <div className="text-xs text-navy-400 mt-0.5">{stat.label}</div>
-                  </div>
-                ))}
-              </motion.div>
-
-              <motion.div variants={fadeUp} custom={3}>
-                <Button
-                  className="bg-navy-900 hover:bg-navy-800 text-white font-semibold px-6 h-11 text-sm"
-                  onClick={() => window.location.href = '/about'}
-                >
-                  اعرف المزيد عنا
-                  <ArrowLeft className="w-4 h-4 ms-2" />
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {whyLexora.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
-                  variants={fadeUp}
-                  custom={i + 1}
-                  className="bg-navy-50/70 rounded-2xl p-6 hover:bg-navy-50 hover:shadow-md transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center mb-4 shadow-sm">
-                    <item.icon className="w-5 h-5 text-navy-700" />
-                  </div>
-                  <h4 className="font-bold text-navy-900 text-sm mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-navy-500 text-xs leading-relaxed">
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== FAQ SECTION ===== */}
-      <section className="py-24 bg-navy-50/50">
+      {/* ===== ASYCUDA SERVICES ===== */}
+      <section className="py-20 bg-white">
         <div className="container">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            custom={0}
-            className="text-center mb-16"
+            viewport={{ once: true }}
+            className="text-center mb-14"
           >
-            <span className="text-xs font-semibold text-blue-600 tracking-wider uppercase mb-3 block">
-              الأسئلة الشائعة
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
-              أسئلة متكررة
-            </h2>
-            <p className="text-navy-500 max-w-xl mx-auto">
-              إجابات على أكثر الأسئلة شيوعاً حول منصة Lexora وخدمات CCG
-            </p>
+            <motion.div variants={fadeUp} custom={0}>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D2F8F]/8 border border-[#2D2F8F]/15 mb-4">
+                <Zap className="w-3.5 h-3.5 text-[#2D2F8F]" />
+                <span className="text-[#2D2F8F] text-xs font-semibold">خدماتنا المتخصصة</span>
+              </span>
+            </motion.div>
+            <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              كل ما تحتاجه لملف{" "}
+              <span className="text-[#2D2F8F]">ASYCUDA</span> مكتمل
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={2} className="text-gray-500 max-w-2xl mx-auto">
+              نقدم خدمة شاملة من إعداد البيانات الجمركية إلى مراجعة ملفات الاستيراد والامتثال للمعايير الدولية.
+            </motion.p>
           </motion.div>
 
-          <div className="max-w-2xl mx-auto space-y-3">
-            {faqItems.map((item, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {asycudaServices.map((service, i) => (
               <motion.div
-                key={item.question}
+                key={i}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-30px" }}
+                viewport={{ once: true }}
                 variants={fadeUp}
-                custom={i + 1}
+                custom={i}
+                className="group p-6 rounded-2xl border border-gray-100 hover:border-[#2D2F8F]/20 hover:shadow-lg transition-all duration-300 bg-white"
               >
-                <FAQItem item={item} />
+                <div className="w-12 h-12 rounded-xl bg-[#2D2F8F]/8 flex items-center justify-center mb-4 group-hover:bg-[#2D2F8F]/15 transition-colors">
+                  <service.icon className="w-6 h-6 text-[#2D2F8F]" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/asycuda-services"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#2D2F8F] text-white font-semibold hover:bg-[#232570] transition-all no-underline"
+            >
+              عرض جميع الخدمات
+              <ArrowLeft className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="py-24">
+      <section className="py-20 bg-gradient-to-br from-[#2D2F8F] to-[#1a1c5e]">
         <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div variants={fadeUp} custom={0}>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/20 border border-[#B8972A]/30 mb-6">
+                  <Phone className="w-3.5 h-3.5 text-[#B8972A]" />
+                  <span className="text-[#B8972A] text-xs font-semibold">تواصل معنا الآن</span>
+                </span>
+              </motion.div>
+              <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-bold text-white mb-4">
+                هل ملفك جاهز للتقديم؟
+              </motion.h2>
+              <motion.p variants={fadeUp} custom={2} className="text-white/70 text-lg mb-8">
+                أرسل مستنداتك الآن وسيتولى فريقنا إعداد ملف ASYCUDA الكامل خلال 24-48 ساعة.
+              </motion.p>
+              <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#20bd5a] transition-all shadow-lg no-underline"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  ابدأ عبر واتساب
+                </a>
+                <Link
+                  href="/asycuda-services"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition-all no-underline"
+                >
+                  عرض تفاصيل الخدمة
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHY US ===== */}
+      <section className="py-20 bg-gray-50">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div variants={fadeUp} custom={0}>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/10 border border-[#B8972A]/20 mb-4">
+                  <Star className="w-3.5 h-3.5 text-[#B8972A]" />
+                  <span className="text-[#B8972A] text-xs font-semibold">لماذا Lexora DOC؟</span>
+                </span>
+              </motion.div>
+              <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                الخبرة والدقة في كل ملف
+              </motion.h2>
+              <div className="space-y-4">
+                {[
+                  { icon: Shield, title: "امتثال كامل", desc: "نضمن توافق كل مستند مع تعليمات البنك المركزي العراقي ومتطلبات ASYCUDA." },
+                  { icon: Clock, title: "سرعة في التسليم", desc: "إعداد الملفات خلال 24-48 ساعة مع متابعة مستمرة حتى إتمام التخليص." },
+                  { icon: Users, title: "فريق متخصص", desc: "خبراء متخصصون في الجمارك العراقية ونظام ASYCUDA World." },
+                  { icon: CheckCircle2, title: "ضمان الجودة", desc: "مراجعة دقيقة متعددة المراحل لكل ملف قبل التسليم." },
+                ].map((item, i) => (
+                  <motion.div key={i} variants={fadeUp} custom={i + 2} className="flex gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#2D2F8F]/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <item.icon className="w-5 h-5 text-[#2D2F8F]" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2">ابدأ طلبك الآن</h3>
+              <p className="text-gray-500 text-sm mb-6">أرسل لنا تفاصيل ملفك عبر واتساب وسنتواصل معك فوراً</p>
+              <div className="space-y-3 mb-6">
+                {[
+                  "إرسال المستندات عبر واتساب",
+                  "مراجعة الملف من قبل الخبراء",
+                  "إعداد البيان الجمركي الكامل",
+                  "تسليم الملف جاهزاً للتقديم",
+                ].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D2F8F] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                      {i + 1}
+                    </div>
+                    <span className="text-gray-700 text-sm">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-all no-underline"
+              >
+                <MessageCircle className="w-5 h-5" />
+                تواصل معنا عبر واتساب
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ ===== */}
+      <section className="py-20 bg-white">
+        <div className="container max-w-3xl">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            custom={0}
-            className="relative bg-navy-900 rounded-3xl p-12 lg:p-16 text-center overflow-hidden"
+            viewport={{ once: true }}
+            className="text-center mb-12"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.15),transparent_50%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(196,163,90,0.1),transparent_50%)]" />
-
-            <div className="relative z-10">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                ابدأ بتنظيم وثائقك اليوم
-              </h2>
-              <p className="text-navy-300 max-w-lg mx-auto mb-8">
-                تواصل معنا للحصول على خدمات إعداد الوثائق ومراجعة ملفات الامتثال
-                التجاري
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Button
-                  size="lg"
-                  className="bg-white text-navy-900 hover:bg-navy-50 font-semibold px-8 h-12 text-sm"
-                  onClick={() => window.location.href = '/contact'}
-                >
-                  تواصل معنا
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10 font-semibold px-8 h-12 text-sm bg-transparent"
-                  onClick={() => window.location.href = '/services'}
-                >
-                  استعرض الخدمات
-                </Button>
-              </div>
-            </div>
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl font-bold text-gray-900 mb-3">
+              أسئلة شائعة
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="text-gray-500">
+              إجابات على أكثر الأسئلة شيوعاً حول خدمات ASYCUDA
+            </motion.p>
           </motion.div>
+          <div className="space-y-3">
+            {faqs.map((item, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
+              >
+                <FAQItem item={item} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <p className="text-gray-500 text-sm mb-4">لديك سؤال آخر؟</p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#20bd5a] transition-all no-underline"
+            >
+              <MessageCircle className="w-4 h-4" />
+              اسألنا مباشرة
+            </a>
+          </div>
         </div>
       </section>
     </div>

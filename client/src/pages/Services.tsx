@@ -1,16 +1,23 @@
 /*
- * Design: Clean Tech Platform — Services Page
+ * LEXORA DOC — صفحة الخدمات
+ * ASYCUDA محورياً، بدون CCG وقوالب
+ * موجّه للبيع والتحويل عبر واتساب
  */
 import { Button } from "@/components/ui/button";
 import {
   FileText,
-  LayoutTemplate,
   ShieldCheck,
   ArrowLeft,
   CheckCircle2,
+  MessageCircle,
+  Landmark,
+  Zap,
+  Building2,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
+const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20Lexora";
 const SERVICES_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/services-hero-QczSxwPKCmwQWzcBDhHoER.webp";
 
 const fadeUp = {
@@ -24,6 +31,25 @@ const fadeUp = {
 
 const services = [
   {
+    icon: ShieldCheck,
+    title: "خدمات ASYCUDA الجمركية",
+    description:
+      "الخدمة المحورية الأساسية في Lexora. نتولى إعداد البيان الجمركي المسبق، مراجعة ملفات الاستيراد، والتأكد من الامتثال الكامل لمتطلبات نظام ASYCUDA World ومتطلبات البنك المركزي العراقي.",
+    features: [
+      "إعداد البيان الجمركي المسبق",
+      "مراجعة ملفات الاستيراد",
+      "الامتثال لمتطلبات البنك المركزي",
+      "تسريع إجراءات التخليص",
+    ],
+    color: "bg-[#2D2F8F]/10 text-[#2D2F8F]",
+    borderColor: "hover:border-[#2D2F8F]/20",
+    badge: "الخدمة الرئيسية",
+    badgeColor: "bg-[#2D2F8F]/10 text-[#2D2F8F]",
+    href: "/asycuda-services",
+    cta: "استكشف خدمات ASYCUDA",
+    isMain: true,
+  },
+  {
     icon: FileText,
     title: "إعداد الوثائق والمراسلات الرسمية",
     description:
@@ -36,43 +62,76 @@ const services = [
     ],
     color: "bg-blue-50 text-blue-600",
     borderColor: "hover:border-blue-200",
+    badge: null,
+    badgeColor: "",
+    href: null,
+    cta: "اطلب الخدمة",
+    isMain: false,
   },
   {
-    icon: LayoutTemplate,
-    title: "القوالب الجاهزة للوثائق",
+    icon: Landmark,
+    title: "الامتثال لمتطلبات البنك المركزي",
     description:
-      "مكتبة متكاملة من القوالب الجاهزة التي تغطي مختلف أنواع الوثائق الرسمية. قوالب مصممة بعناية وجاهزة للاستخدام الفوري مع إمكانية التخصيص.",
+      "تنظيم ملفات التحويل المصرفي والاستيراد وفق التعليمات الصادرة عن البنك المركزي العراقي. نضمن أن جميع مستنداتك مستوفية للمتطلبات التنظيمية الحديثة.",
     features: [
-      "نماذج الكتب الرسمية",
-      "نماذج التقارير",
-      "نماذج العقود",
-      "نماذج الموارد البشرية",
-    ],
-    color: "bg-emerald-50 text-emerald-600",
-    borderColor: "hover:border-emerald-200",
-  },
-  {
-    icon: ShieldCheck,
-    title: "الامتثال التجاري (CCG)",
-    description:
-      "قسم متخصص في مراجعة وتنظيم ملفات الاستيراد والمعاملات المرتبطة بالتحويلات المصرفية وفقاً لتعليمات البنك المركزي العراقي والمتطلبات التنظيمية ذات العلاقة.",
-    features: [
-      "مراجعة ملفات الاستيراد",
+      "مراجعة متطلبات التحويل المصرفي",
       "تدقيق الفواتير التجارية",
       "مطابقة المستندات",
       "تنظيم الملفات قبل التقديم",
     ],
     color: "bg-amber-50 text-amber-600",
     borderColor: "hover:border-amber-200",
-    href: "/ccg",
+    badge: null,
+    badgeColor: "",
+    href: null,
+    cta: "اطلب الخدمة",
+    isMain: false,
+  },
+  {
+    icon: Building2,
+    title: "خدمات الشركات والمستوردين",
+    description:
+      "حلول متكاملة للشركات الكبرى والمستوردين في إدارة ملفات الاستيراد والتصدير. نوفر دعماً مستمراً لضمان سير العمليات التجارية بكفاءة عالية.",
+    features: [
+      "إدارة ملفات الاستيراد المتعددة",
+      "متابعة إجراءات التخليص",
+      "تقارير دورية عن الملفات",
+      "دعم مستمر على مدار الساعة",
+    ],
+    color: "bg-emerald-50 text-emerald-600",
+    borderColor: "hover:border-emerald-200",
+    badge: null,
+    badgeColor: "",
+    href: null,
+    cta: "اطلب الخدمة",
+    isMain: false,
+  },
+  {
+    icon: Zap,
+    title: "خدمة الإنجاز السريع",
+    description:
+      "للحالات المستعجلة، نوفر خدمة الإنجاز السريع خلال 12-24 ساعة. نضمن إعداد ملفك الجمركي بأعلى مستويات الدقة والاحترافية في أقصر وقت ممكن.",
+    features: [
+      "إنجاز خلال 12-24 ساعة",
+      "مراجعة فورية للمستندات",
+      "تواصل مباشر مع المختص",
+      "متابعة لحظية للتقدم",
+    ],
+    color: "bg-purple-50 text-purple-600",
+    borderColor: "hover:border-purple-200",
+    badge: "سريع",
+    badgeColor: "bg-purple-100 text-purple-700",
+    href: null,
+    cta: "اطلب الخدمة السريعة",
+    isMain: false,
   },
 ];
 
 export default function Services() {
   return (
-    <div>
+    <div dir="rtl">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden bg-navy-50/50">
+      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-[#2D2F8F]/5 to-white">
         <div className="container relative z-10 pt-8">
           <motion.div
             initial="hidden"
@@ -83,31 +142,50 @@ export default function Services() {
               <motion.span
                 variants={fadeUp}
                 custom={0}
-                className="text-xs font-semibold text-blue-600 tracking-wider uppercase mb-3 block"
+                className="text-xs font-semibold text-[#2D2F8F] tracking-wider uppercase mb-3 block"
               >
                 خدماتنا
               </motion.span>
               <motion.h1
                 variants={fadeUp}
                 custom={1}
-                className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6 leading-tight"
+                className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight"
               >
-                خدمات متخصصة للوثائق والأعمال
+                خدمات متخصصة في{" "}
+                <span className="text-[#2D2F8F]">ASYCUDA</span>{" "}
+                والوثائق الرسمية
               </motion.h1>
               <motion.p
                 variants={fadeUp}
                 custom={2}
-                className="text-lg text-navy-500 leading-relaxed"
+                className="text-lg text-gray-500 leading-relaxed mb-8"
               >
-                نقدم مجموعة متكاملة من الخدمات المتخصصة في إعداد الوثائق
-                والمراسلات الرسمية وتنظيم الملفات التجارية.
+                نقدم حلولاً شاملة لجميع احتياجاتك في إعداد الوثائق الجمركية،
+                مراجعة ملفات الاستيراد، والامتثال لمتطلبات البنك المركزي العراقي.
               </motion.p>
+              <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-all shadow-md no-underline"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  تواصل معنا الآن
+                </a>
+                <Link href="/asycuda-services">
+                  <Button variant="outline" className="border-[#2D2F8F]/30 text-[#2D2F8F] hover:bg-[#2D2F8F]/5">
+                    خدمات ASYCUDA التفصيلية
+                    <ArrowLeft className="w-4 h-4 ms-2" />
+                  </Button>
+                </Link>
+              </motion.div>
             </div>
             <motion.div variants={fadeUp} custom={3}>
               <img
                 src={SERVICES_BG}
                 alt="خدمات Lexora"
-                className="rounded-2xl shadow-xl shadow-navy-900/10"
+                className="rounded-2xl shadow-xl shadow-gray-900/10"
               />
             </motion.div>
           </motion.div>
@@ -115,7 +193,7 @@ export default function Services() {
       </section>
 
       {/* Services */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="container space-y-8">
           {services.map((service, i) => (
             <motion.div
@@ -125,35 +203,53 @@ export default function Services() {
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
               custom={i}
-              className={`bg-white rounded-2xl border border-navy-100 p-8 lg:p-10 ${service.borderColor} hover:shadow-lg transition-all duration-300`}
+              className={`bg-white rounded-2xl border ${service.isMain ? "border-[#2D2F8F]/20 shadow-md" : "border-gray-100"} p-8 lg:p-10 ${service.borderColor} hover:shadow-lg transition-all duration-300 relative`}
             >
+              {service.badge && (
+                <span className={`absolute top-6 left-6 px-3 py-1 rounded-full text-xs font-semibold ${service.badgeColor}`}>
+                  {service.badge}
+                </span>
+              )}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2">
                   <div className={`w-12 h-12 rounded-xl ${service.color} flex items-center justify-center mb-5`}>
                     <service.icon className="w-6 h-6" />
                   </div>
-                  <h2 className="text-2xl font-bold text-navy-900 mb-4">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     {service.title}
                   </h2>
-                  <p className="text-navy-500 leading-relaxed mb-6">
+                  <p className="text-gray-500 leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  <Button
-                    className="bg-navy-900 hover:bg-navy-800 text-white text-sm"
-                    onClick={() => window.location.href = service.href || '/contact'}
-                  >
-                    {service.href ? "استكشف CCG" : "اطلب الخدمة"}
-                    <ArrowLeft className="w-4 h-4 ms-2" />
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    {service.href ? (
+                      <Link href={service.href}>
+                        <Button className="bg-[#2D2F8F] hover:bg-[#232570] text-white text-sm">
+                          {service.cta}
+                          <ArrowLeft className="w-4 h-4 ms-2" />
+                        </Button>
+                      </Link>
+                    ) : (
+                      <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20bd5a] transition-all no-underline"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        {service.cta}
+                      </a>
+                    )}
+                  </div>
                 </div>
                 <div className="space-y-3">
                   {service.features.map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-center gap-3 bg-navy-50/70 rounded-xl p-3"
+                      className="flex items-center gap-3 bg-gray-50 rounded-xl p-3"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                      <span className="text-navy-700 text-sm font-medium">
+                      <span className="text-gray-700 text-sm font-medium">
                         {feature}
                       </span>
                     </div>
@@ -162,6 +258,35 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-[#2D2F8F] to-[#1a1c5e]">
+        <div className="container text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl font-bold text-white mb-4">
+              هل تحتاج إلى مساعدة في اختيار الخدمة المناسبة؟
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="text-white/70 max-w-lg mx-auto mb-8">
+              تواصل معنا عبر واتساب وسيساعدك فريقنا في تحديد الخدمة الأنسب لاحتياجاتك
+            </motion.p>
+            <motion.div variants={fadeUp} custom={2}>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#20bd5a] transition-all shadow-lg no-underline"
+              >
+                <MessageCircle className="w-5 h-5" />
+                تواصل معنا عبر واتساب
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

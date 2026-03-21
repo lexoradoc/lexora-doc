@@ -1,24 +1,22 @@
 /*
- * Design: Clean Tech Platform — IBM Plex Sans Arabic
- * Navy (#0F172A) primary, white bg, blue accents
- * Glassmorphism nav on scroll, clean minimal style
+ * Navbar — LEXORA DOC
+ * كحلي (#2D2F8F) + ذهبي (#B8972A)
+ * بدون CCG، بدون القوالب، ASYCUDA محورياً
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Pages with dark hero backgrounds where nav text should be white
-const darkHeroPages = ["/", "/ccg", "/asycuda-services"];
+const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20ASYCUDA";
+
+const darkHeroPages = ["/", "/asycuda-services"];
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
-  { href: "/ccg", label: "CCG" },
-  { href: "/asycuda-services", label: "خدمات ASYCUDA" },
+  { href: "/asycuda-services", label: "ASYCUDA" },
   { href: "/services", label: "الخدمات" },
-  { href: "/templates", label: "القوالب" },
-  { href: "/blog", label: "المدونة" },
   { href: "/about", label: "من نحن" },
   { href: "/contact", label: "تواصل معنا" },
 ];
@@ -44,7 +42,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl border-b border-navy-100 shadow-sm"
+          ? "bg-white/95 backdrop-blur-xl border-b border-[#2D2F8F]/10 shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -52,9 +50,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 no-underline">
-            <img 
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663385768314/YKetDnvZqOPJicMm.jpg" 
-              alt="Lexora Logo"
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
+              alt="Lexora DOC"
               className="h-10 w-auto object-contain"
             />
           </Link>
@@ -67,8 +65,12 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors no-underline ${
                   location === link.href
-                    ? showLight ? "text-white bg-white/15" : "text-navy-900 bg-navy-50"
-                    : showLight ? "text-white/70 hover:text-white hover:bg-white/10" : "text-navy-500 hover:text-navy-900 hover:bg-navy-50/50"
+                    ? showLight
+                      ? "text-white bg-white/15"
+                      : "text-[#2D2F8F] bg-[#2D2F8F]/8 font-semibold"
+                    : showLight
+                    ? "text-white/80 hover:text-white hover:bg-white/10"
+                    : "text-gray-600 hover:text-[#2D2F8F] hover:bg-[#2D2F8F]/5"
                 }`}
               >
                 {link.label}
@@ -76,32 +78,36 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button
-              variant="outline"
-              className={`text-sm transition-colors ${showLight ? 'border-white/30 text-white hover:bg-white/10 bg-transparent' : 'border-navy-200 text-navy-700 hover:bg-navy-50'}`}
-              onClick={() => window.location.href = '/ccg'}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20bd5a] transition-all no-underline"
             >
-              تعرف على CCG
-            </Button>
+              <MessageCircle className="w-4 h-4" />
+              واتساب
+            </a>
             <Button
-              className={`text-sm ${showLight ? 'bg-white text-navy-900 hover:bg-white/90' : 'bg-navy-900 hover:bg-navy-800 text-white'}`}
-              onClick={() => window.location.href = '/contact'}
+              className="text-sm font-semibold bg-[#2D2F8F] hover:bg-[#232570] text-white"
+              onClick={() => (window.location.href = "/asycuda-services")}
             >
-              ابدأ الآن
+              ابدأ طلبك
             </Button>
           </div>
 
           {/* Mobile Toggle */}
           <button
-            className={`lg:hidden p-2 rounded-lg transition-colors ${showLight ? 'hover:bg-white/10' : 'hover:bg-navy-50'}`}
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
+              showLight ? "hover:bg-white/10" : "hover:bg-[#2D2F8F]/5"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? (
-              <X className={`w-5 h-5 ${showLight ? 'text-white' : 'text-navy-900'}`} />
+              <X className={`w-5 h-5 ${showLight ? "text-white" : "text-[#2D2F8F]"}`} />
             ) : (
-              <Menu className={`w-5 h-5 ${showLight ? 'text-white' : 'text-navy-900'}`} />
+              <Menu className={`w-5 h-5 ${showLight ? "text-white" : "text-[#2D2F8F]"}`} />
             )}
           </button>
         </div>
@@ -114,7 +120,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-navy-100"
+            className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-[#2D2F8F]/10"
           >
             <div className="container py-4 space-y-1">
               {navLinks.map((link) => (
@@ -123,26 +129,28 @@ export default function Navbar() {
                   href={link.href}
                   className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors no-underline ${
                     location === link.href
-                      ? "text-navy-900 bg-navy-50"
-                      : "text-navy-500 hover:text-navy-900 hover:bg-navy-50/50"
+                      ? "text-[#2D2F8F] bg-[#2D2F8F]/8 font-semibold"
+                      : "text-gray-600 hover:text-[#2D2F8F] hover:bg-[#2D2F8F]/5"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
               <div className="pt-3 flex flex-col gap-2 px-4">
-                <Button
-                  variant="outline"
-                  className="w-full border-navy-200 text-navy-700"
-                  onClick={() => window.location.href = '/ccg'}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#25D366] text-white text-sm font-semibold no-underline"
                 >
-                  تعرف على CCG
-                </Button>
+                  <MessageCircle className="w-4 h-4" />
+                  تواصل عبر واتساب
+                </a>
                 <Button
-                  className="w-full bg-navy-900 hover:bg-navy-800 text-white"
-                  onClick={() => window.location.href = '/contact'}
+                  className="w-full bg-[#2D2F8F] hover:bg-[#232570] text-white font-semibold"
+                  onClick={() => (window.location.href = "/asycuda-services")}
                 >
-                  ابدأ الآن
+                  ابدأ طلبك الآن
                 </Button>
               </div>
             </div>

@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/about-section-AjgxPYbVJGAy8Ewq9V7Uha.webp";
+const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-about-8bFkRGXMt4KhfBrPYiPQgB.webp";
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
 const fadeUp = {
@@ -208,6 +208,20 @@ export default function About() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* VISUAL - OFFICE */}
+      <section className="relative h-64 md:h-80 overflow-hidden">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-about-8bFkRGXMt4KhfBrPYiPQgB.webp"
+          alt="فريق Lexora Doc في بيئة عمل احترافية"
+          className="w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#2D2F8F]/30 to-[#1a1c5e]/70" />
+        <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
+          <p className="text-white font-bold text-xl drop-shadow-lg">خبراء متخصصون في الجمارك العراقية ونظام ASYCUDA</p>
         </div>
       </section>
 

@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
-const SERVICES_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/services-hero-QczSxwPKCmwQWzcBDhHoER.webp";
+const SERVICES_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-hscode-CmFen8YZEZHZzkgg9yMicb.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

@@ -27,7 +27,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/hero-bg-mCVedue9GUhHgV9aPreJro.webp";
+const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-asycuda-4YciusSe5PcehRrw5RyNET.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -173,6 +173,25 @@ export default function AsycudaServices() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VISUAL BREAK - DOCUMENTS */}
+      <section className="relative h-64 md:h-80 overflow-hidden">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-documents-TNruSwkMsmgXu7G8b4xFsT.webp"
+          alt="مراجعة وثائق تجارية وتدقيق HS Code - Lexora Doc"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1c5e]/85 via-[#2D2F8F]/60 to-transparent" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container">
+            <div className="max-w-lg">
+              <p className="text-[#B8972A] text-sm font-semibold mb-2">تدقيق HS Code ومراجعة الوثائق</p>
+              <p className="text-white text-xl md:text-2xl font-bold leading-snug">كل تفصيلة في مستندك تخضع لمراجعة دقيقة</p>
+            </div>
           </div>
         </div>
       </section>

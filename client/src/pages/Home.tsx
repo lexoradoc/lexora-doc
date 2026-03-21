@@ -26,7 +26,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/hero-bg-mCVedue9GUhHgV9aPreJro.webp";
+const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-hero-Psp8nLL4ffUZTZtJe2cSMB.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -235,6 +235,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== VISUAL SECTION - SHIPPING ===== */}
+      <section className="relative h-72 md:h-96 overflow-hidden">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-shipping-o624vchnH2KUH3QzEKXhhM.webp"
+          alt="ميناء تجاري دولي - إدارة ملفات الاستيراد والشحن"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1c5e]/80 via-[#2D2F8F]/40 to-transparent" />
+        <div className="absolute inset-0 flex items-end pb-10 justify-center">
+          <div className="text-center text-white">
+            <p className="text-lg md:text-2xl font-bold drop-shadow-lg">نُدير ملفات استيرادك من الميناء إلى الجمارك</p>
+            <p className="text-white/80 text-sm mt-2">خبرة في التجارة الدولية والامتثال الجمركي العراقي</p>
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA SECTION ===== */}
       <section className="py-20 bg-gradient-to-br from-[#2D2F8F] to-[#1a1c5e]">
         <div className="container">
@@ -321,7 +338,29 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
+              className="relative rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-compliance-8Rakh87p6KTuzDZjg3i8HQ.webp"
+                alt="متخصص يحمل وثيقة امتثال تجاري معتمدة - Lexora Doc"
+                className="w-full h-80 object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1c5e]/70 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                  <p className="text-white font-bold text-lg mb-1">امتثال كامل ومضمون</p>
+                  <p className="text-white/80 text-sm">كل ملف يمر بمراجعة دقيقة قبل التسليم</p>
+                </div>
+              </div>
+            </motion.div>
+            {/* Hidden original card - replaced by image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="hidden bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
             >
               <h3 className="text-xl font-bold text-gray-900 mb-2">ابدأ طلبك الآن</h3>
               <p className="text-gray-500 text-sm mb-6">أرسل لنا تفاصيل ملفك عبر واتساب وسنتواصل معك فوراً</p>

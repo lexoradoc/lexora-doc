@@ -1,9 +1,10 @@
 /*
  * Footer — Lexora Doc
  * كحلي + ذهبي، ASYCUDA محورياً، واتساب بارز
+ * شريط ثقة: البنك المركزي العراقي + ASYCUDA + الهيئة العامة للجمارك
  */
 import { Link } from "wouter";
-import { MessageCircle, Mail, Phone } from "lucide-react";
+import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
@@ -21,6 +22,26 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-[#1a1c5e] text-white/70" dir="rtl">
+      {/* CBI Trust Bar */}
+      <div className="bg-[#141650] border-b border-white/5">
+        <div className="container py-5">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-[#B8972A]/15">
+              <Landmark className="w-4 h-4 text-[#B8972A]" />
+              <span className="text-white/70 text-xs font-medium">وفق تعليمات البنك المركزي العراقي</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-[#B8972A]/15">
+              <Shield className="w-4 h-4 text-[#B8972A]" />
+              <span className="text-white/70 text-xs font-medium">امتثال ASYCUDA World</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-[#B8972A]/15">
+              <CheckCircle className="w-4 h-4 text-[#B8972A]" />
+              <span className="text-white/70 text-xs font-medium">الهيئة العامة للجمارك</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
@@ -33,8 +54,9 @@ export default function Footer() {
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-md mb-6">
-              Lexora Doc منصة متخصصة في إدارة ملفات الاستيراد والامتثال التجاري،
-              مع خدمات ASYCUDA ومراجعة الوثائق التجارية وتجهيز البيان الكمركي المسبق والنهائي.
+              Lexora Doc منصة متخصصة في إدارة ملفات الاستيراد والامتثال التجاري
+              وفق تعليمات البنك المركزي العراقي، مع خدمات ASYCUDA ومراجعة الوثائق
+              التجارية وتجهيز البيان الكمركي المسبق والنهائي.
             </p>
             {/* WhatsApp CTA */}
             <a

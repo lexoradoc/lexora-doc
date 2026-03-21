@@ -20,6 +20,7 @@ import {
   Phone,
   ClipboardList,
   Search,
+  Landmark,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -176,6 +177,49 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===== CBI TRUST BAR ===== */}
+      <section className="py-6 bg-gradient-to-r from-[#f8f6f0] via-[#faf8f2] to-[#f8f6f0] border-y border-[#B8972A]/15">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#B8972A]/15 flex items-center justify-center flex-shrink-0">
+                <Landmark className="w-5 h-5 text-[#B8972A]" />
+              </div>
+              <div>
+                <p className="text-[#2D2F8F] font-bold text-sm">وفق تعليمات البنك المركزي العراقي</p>
+                <p className="text-gray-500 text-xs">جميع الملفات تُعدّ وفق الضوابط والتعليمات الصادرة عن البنك المركزي العراقي</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-px h-10 bg-[#B8972A]/20" />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#2D2F8F]/10 flex items-center justify-center flex-shrink-0">
+                <Shield className="w-5 h-5 text-[#2D2F8F]" />
+              </div>
+              <div>
+                <p className="text-[#2D2F8F] font-bold text-sm">امتثال كامل لنظام ASYCUDA World</p>
+                <p className="text-gray-500 text-xs">إعداد البيانات الجمركية بما يتوافق مع متطلبات الهيئة العامة للجمارك</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-px h-10 bg-[#B8972A]/20" />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
+                <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+              </div>
+              <div>
+                <p className="text-[#2D2F8F] font-bold text-sm">مراجعة دقيقة لكل مستند</p>
+                <p className="text-gray-500 text-xs">فحص شامل للفاتورة وبوليصة الشحن وشهادة المنشأ</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

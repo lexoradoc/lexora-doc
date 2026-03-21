@@ -192,6 +192,28 @@ export default function Services() {
         </div>
       </section>
 
+      {/* CBI TRUST BAR */}
+      <section className="py-5 bg-gradient-to-r from-[#f8f6f0] via-[#faf8f2] to-[#f8f6f0] border-y border-[#B8972A]/15">
+        <div className="container">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center gap-2">
+              <Landmark className="w-5 h-5 text-[#B8972A]" />
+              <span className="text-[#2D2F8F] text-sm font-bold">وفق تعليمات البنك المركزي العراقي</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-[#B8972A]/20" />
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-[#2D2F8F]" />
+              <span className="text-[#2D2F8F] text-sm font-bold">امتثال ASYCUDA World</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-[#B8972A]/20" />
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+              <span className="text-[#2D2F8F] text-sm font-bold">الهيئة العامة للجمارك</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section className="py-24 bg-white">
         <div className="container space-y-8">

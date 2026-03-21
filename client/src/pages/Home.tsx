@@ -134,9 +134,9 @@ export default function Home() {
             </motion.div>
 
             <motion.h1 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              خبراء إعداد ملفات{" "}
-              <span className="text-[#B8972A]">ASYCUDA</span>{" "}
-              الجمركية في العراق
+              <span className="text-[#B8972A]">Lexora Doc</span>{" "}
+              إدارة ملفات الاستيراد{" "}
+              والامتثال التجاري
             </motion.h1>
 
             <motion.p variants={fadeUp} custom={2} className="text-lg text-white/75 leading-relaxed mb-8 max-w-2xl">

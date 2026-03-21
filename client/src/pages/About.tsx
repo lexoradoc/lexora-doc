@@ -32,9 +32,9 @@ const fadeUp = {
 };
 
 const stats = [
-  { icon: Building2, value: "٥٠٠+", label: "شركة مستفيدة" },
-  { icon: FileCheck, value: "١٠,٠٠٠+", label: "ملف جمركي تمت مراجعته" },
-  { icon: Users, value: "٢,٠٠٠+", label: "عميل نشط" },
+  { icon: FileCheck, value: "+500", label: "ملف معالج" },
+  { icon: Users, value: "+200", label: "عميل راضٍ" },
+  { icon: Building2, value: "98%", label: "نسبة النجاح" },
 ];
 
 const values = [
@@ -234,19 +234,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* VISUAL - OFFICE */}
-      <section className="relative h-64 md:h-80 overflow-hidden">
-        <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-about-8bFkRGXMt4KhfBrPYiPQgB.webp"
-          alt="فريق Lexora Doc في بيئة عمل احترافية"
-          className="w-full h-full object-cover object-center"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#2D2F8F]/30 to-[#1a1c5e]/70" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
-          <p className="text-white font-bold text-xl drop-shadow-lg">خبراء متخصصون في الجمارك العراقية ونظام ASYCUDA</p>
-        </div>
-      </section>
+
 
       {/* Stats */}
       <section className="py-24 bg-gradient-to-br from-[#2D2F8F] to-[#1a1c5e]">

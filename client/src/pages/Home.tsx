@@ -188,9 +188,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-start gap-3 text-center md:text-start">
               <div className="w-10 h-10 rounded-full bg-[#B8972A]/15 flex items-center justify-center flex-shrink-0">
                 <Landmark className="w-5 h-5 text-[#B8972A]" />
               </div>
@@ -199,8 +199,7 @@ export default function Home() {
                 <p className="text-gray-500 text-xs">جميع الملفات تُعدّ وفق الضوابط والتعليمات الصادرة عن البنك المركزي العراقي</p>
               </div>
             </div>
-            <div className="hidden md:block w-px h-10 bg-[#B8972A]/20" />
-            <div className="flex items-center gap-3">
+            <div className="flex items-start gap-3 text-center md:text-start">
               <div className="w-10 h-10 rounded-full bg-[#2D2F8F]/10 flex items-center justify-center flex-shrink-0">
                 <Shield className="w-5 h-5 text-[#2D2F8F]" />
               </div>
@@ -209,8 +208,7 @@ export default function Home() {
                 <p className="text-gray-500 text-xs">إعداد البيانات الجمركية بما يتوافق مع متطلبات الهيئة العامة للجمارك</p>
               </div>
             </div>
-            <div className="hidden md:block w-px h-10 bg-[#B8972A]/20" />
-            <div className="flex items-center gap-3">
+            <div className="flex items-start gap-3 text-center md:text-start">
               <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600" />
               </div>

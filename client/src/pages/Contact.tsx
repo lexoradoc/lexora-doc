@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20ASYCUDA";
+const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -28,7 +28,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = encodeURIComponent("مرحباً، اسمي " + formData.name + "\n\n" + formData.message + "\n\nبريدي: " + formData.email);
-    window.open("https://wa.me/9647807437788?text=" + msg, "_blank");
+    window.open("https://wa.me/qr/JBFDI6QYM3CFD1", "_blank");
     toast.success("جاري فتح واتساب...", { description: "سيتم توجيهك إلى واتساب لإرسال رسالتك" });
     setFormData({ name: "", email: "", message: "" });
   };

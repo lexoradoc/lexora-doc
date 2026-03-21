@@ -19,7 +19,7 @@ import {
 import { motion } from "framer-motion";
 
 const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/about-section-AjgxPYbVJGAy8Ewq9V7Uha.webp";
-const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20Lexora";
+const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

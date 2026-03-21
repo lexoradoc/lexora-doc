@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20ASYCUDA";
+const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
 const darkHeroPages = ["/", "/asycuda-services"];
 

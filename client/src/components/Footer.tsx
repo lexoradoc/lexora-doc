@@ -5,7 +5,7 @@
 import { Link } from "wouter";
 import { MessageCircle, Mail, Phone } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20ASYCUDA";
+const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
 const footerLinks = {
   الخدمات: [

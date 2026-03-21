@@ -18,12 +18,14 @@ import {
   Zap,
   Award,
   Phone,
+  ClipboardList,
+  Search,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "wouter";
 
-const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20ASYCUDA";
+const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/hero-bg-mCVedue9GUhHgV9aPreJro.webp";
 
 const fadeUp = {
@@ -38,33 +40,33 @@ const fadeUp = {
 const asycudaServices = [
   {
     icon: FileText,
-    title: "إعداد البيان الكمركي المسبق",
-    description: "تحضير وصياغة البيان المسبق بدقة عالية وفقاً لمتطلبات نظام ASYCUDA العالمي.",
+    title: "إعداد البيان الجمركي المسبق",
+    description: "تحضير وصياغة البيان المسبق بدقة عالية وفقاً لمتطلبات نظام ASYCUDA World.",
+  },
+  {
+    icon: ClipboardList,
+    title: "إعداد البيان الجمركي النهائي",
+    description: "إعداد البيان النهائي الكامل بعد وصول البضاعة وفق اشتراطات هيئة الجمارك العراقية.",
   },
   {
     icon: Shield,
-    title: "مراجعة ملفات الاستيراد",
+    title: "مراجعة الوثائق التجارية",
     description: "فحص شامل لجميع مستندات الاستيراد والتأكد من مطابقتها لتعليمات البنك المركزي العراقي.",
+  },
+  {
+    icon: Search,
+    title: "تدقيق HS Code",
+    description: "تصنيف البضاعة بدقة وفق نظام المنسق الدولي (HS Code) لتجنب أخطاء التعريفة الجمركية.",
   },
   {
     icon: CheckCircle2,
     title: "تدقيق الفواتير والمستندات",
-    description: "مراجعة الفواتير التجارية والتحقق من تطابقها مع المتطلبات التنظيمية.",
-  },
-  {
-    icon: Zap,
-    title: "تسريع إجراءات التخليص",
-    description: "تنظيم الملفات وتجهيزها بشكل احترافي لتسريع إجراءات التخليص الجمركي.",
+    description: "مراجعة الفواتير التجارية والتحقق من تطابقها مع المتطلبات التنظيمية لنظام ASYCUDA.",
   },
   {
     icon: Award,
-    title: "الامتثال للمعايير الدولية",
-    description: "ضمان توافق جميع المستندات مع معايير ASYCUDA World والمتطلبات الدولية.",
-  },
-  {
-    icon: Users,
-    title: "دعم الشركات والمستوردين",
-    description: "خدمة متكاملة للشركات والأفراد في إدارة ملفات الاستيراد والتصدير.",
+    title: "الامتثال لمتطلبات البنك المركزي",
+    description: "ضمان توافق جميع المستندات مع تعليمات البنك المركزي العراقي ومتطلبات التحويل المصرفي.",
   },
 ];
 

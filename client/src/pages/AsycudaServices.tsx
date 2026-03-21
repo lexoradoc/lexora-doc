@@ -26,7 +26,7 @@ import {
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const WHATSAPP_URL = "https://wa.me/9647807437788?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20ASYCUDA";
+const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/hero-bg-mCVedue9GUhHgV9aPreJro.webp";
 
 const fadeUp = {
@@ -39,11 +39,11 @@ const fadeUp = {
 };
 
 const mainServices = [
-  { icon: FileText, title: "إعداد البيان الجمركي المسبق", description: "تحضير وصياغة البيان المسبق بدقة عالية وفقاً لمتطلبات نظام ASYCUDA World.", badge: "الأكثر طلباً" },
-  { icon: Shield, title: "مراجعة ملفات الاستيراد", description: "فحص شامل لجميع مستندات الاستيراد والتأكد من مطابقتها لتعليمات البنك المركزي العراقي.", badge: null },
-  { icon: CheckCircle2, title: "تدقيق الفواتير والمستندات", description: "مراجعة الفواتير التجارية والتحقق من تطابقها مع المتطلبات التنظيمية لنظام ASYCUDA.", badge: null },
-  { icon: Landmark, title: "الامتثال لمتطلبات البنك المركزي", description: "تنظيم ملفات التحويل المصرفي والاستيراد وفق التعليمات الصادرة عن البنك المركزي العراقي.", badge: "مهم" },
-  { icon: Zap, title: "تسريع إجراءات التخليص", description: "تنظيم الملفات وتجهيزها بشكل احترافي لتسريع إجراءات التخليص الجمركي.", badge: null },
+  { icon: FileText, title: "إعداد البيان الجمركي المسبق", description: "تحضير وصياغة البيان المسبق بدقة عالية وفقاً لمتطلبات نظام ASYCUDA World قبل وصول البضاعة.", badge: "الأكثر طلباً" },
+  { icon: ClipboardList, title: "إعداد البيان الجمركي النهائي", description: "إعداد البيان النهائي الكامل بعد وصول البضاعة وفق اشتراطات هيئة الجمارك العراقية.", badge: null },
+  { icon: Shield, title: "مراجعة الوثائق التجارية", description: "فحص شامل لجميع مستندات الاستيراد والتأكد من مطابقتها لتعليمات البنك المركزي العراقي.", badge: null },
+  { icon: Search, title: "تدقيق HS Code", description: "تصنيف البضاعة بدقة وفق نظام المنسق الدولي (HS Code) لتجنب أخطاء التعريفة الجمركية.", badge: "مهم" },
+  { icon: Landmark, title: "الامتثال لمتطلبات البنك المركزي", description: "تنظيم ملفات التحويل المصرفي والاستيراد وفق التعليمات الصادرة عن البنك المركزي العراقي.", badge: null },
   { icon: Building2, title: "خدمات الشركات والمستوردين", description: "حلول متكاملة للشركات الكبرى والمستوردين في إدارة ملفات الاستيراد والتصدير.", badge: null },
 ];
 

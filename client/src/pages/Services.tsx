@@ -34,7 +34,7 @@ const services = [
     icon: ShieldCheck,
     title: "خدمات ASYCUDA الجمركية",
     description:
-      "الخدمة المحورية الأساسية في Lexora. نتولى إعداد البيان الجمركي المسبق، مراجعة ملفات الاستيراد، والتأكد من الامتثال الكامل لمتطلبات نظام ASYCUDA World ومتطلبات البنك المركزي العراقي.",
+      "الخدمة المحورية الأساسية في Lexora Doc. نتولى إعداد البيان الجمركي المسبق، مراجعة ملفات الاستيراد، والتأكد من الامتثال الكامل لمتطلبات نظام ASYCUDA World ومتطلبات البنك المركزي العراقي.",
     features: [
       "إعداد البيان الجمركي المسبق",
       "مراجعة ملفات الاستيراد",
@@ -184,7 +184,7 @@ export default function Services() {
             <motion.div variants={fadeUp} custom={3}>
               <img
                 src={SERVICES_BG}
-                alt="خدمات Lexora"
+                alt="خدمات Lexora Doc"
                 className="rounded-2xl shadow-xl shadow-gray-900/10"
               />
             </motion.div>

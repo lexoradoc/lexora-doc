@@ -290,7 +290,7 @@ export default function Home() {
               <motion.div variants={fadeUp} custom={0}>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/10 border border-[#B8972A]/20 mb-4">
                   <Star className="w-3.5 h-3.5 text-[#B8972A]" />
-                  <span className="text-[#B8972A] text-xs font-semibold">لماذا Lexora DOC؟</span>
+                  <span className="text-[#B8972A] text-xs font-semibold">لماذا Lexora Doc؟</span>
                 </span>
               </motion.div>
               <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

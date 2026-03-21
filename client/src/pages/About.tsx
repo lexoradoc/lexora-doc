@@ -90,7 +90,7 @@ export default function About() {
               custom={2}
               className="text-lg text-gray-500 leading-relaxed"
             >
-              Lexora منصة رقمية متخصصة في إعداد الوثائق الجمركية ومراجعة ملفات
+              Lexora Doc منصة متخصصة في إعداد الوثائق الجمركية ومراجعة ملفات
               الاستيراد وفق متطلبات نظام ASYCUDA World والبنك المركزي العراقي.
             </motion.p>
           </motion.div>
@@ -111,7 +111,7 @@ export default function About() {
                 custom={0}
                 className="text-gray-600 leading-loose text-lg"
               >
-                تأسست Lexora بهدف تقديم خدمات متخصصة في مجال الوثائق الجمركية
+                تأسست Lexora Doc بهدف تقديم خدمات متخصصة في مجال الوثائق الجمركية
                 وإعداد ملفات الاستيراد. نركز على مساعدة الشركات والمستوردين في
                 العراق على الامتثال لمتطلبات نظام ASYCUDA World.
               </motion.p>
@@ -252,7 +252,7 @@ export default function About() {
               هل أنت مستعد للبدء؟
             </h2>
             <p className="text-gray-500 max-w-lg mx-auto mb-8">
-              تواصل معنا اليوم واكتشف كيف يمكن لـ Lexora مساعدتك في إعداد ملفاتك الجمركية
+              تواصل معنا اليوم واكتشف كيف يمكن لـ Lexora Doc مساعدتك في إعداد ملفاتك الجمركية
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

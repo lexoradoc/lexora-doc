@@ -52,7 +52,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 no-underline">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
-              alt="Lexora DOC"
+              alt="Lexora Doc"
               className="h-10 w-auto object-contain"
             />
           </Link>

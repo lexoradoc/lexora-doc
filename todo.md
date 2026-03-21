@@ -22,3 +22,13 @@
 - [x] تحديث meta description في index.html
 - [x] إضافة meta keywords وog:title وog:description
 - [x] مراجعة نهائية وحفظ checkpoint
+
+## تحديث SEO الشامل - مارس 2026
+
+- [x] فحص جميع مواضع الاسم القديم في الموقع
+- [x] تحديث title وmeta description وkeywords في index.html
+- [x] تحديث Open Graph: og:title وog:description وog:site_name وog:image
+- [x] إضافة Twitter Card meta tags
+- [x] تحديث اسم الموقع في Footer وNavbar
+- [x] تحديث اسم الموقع في صفحات About وServices وHome
+- [x] مراجعة نهائية وحفظ checkpoint

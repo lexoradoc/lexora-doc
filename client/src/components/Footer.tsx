@@ -1,5 +1,5 @@
 /*
- * Footer — LEXORA DOC
+ * Footer — Lexora Doc
  * كحلي + ذهبي، ASYCUDA محورياً، واتساب بارز
  */
 import { Link } from "wouter";
@@ -28,13 +28,13 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
-                alt="Lexora DOC"
+                alt="Lexora Doc"
                 className="h-12 w-auto object-contain"
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-md mb-6">
-              منصة متخصصة في إعداد البيانات الكمركية المسبقة ومراجعة ملفات الاستيراد
-              وفق متطلبات نظام ASYCUDA وتعليمات البنك المركزي العراقي.
+              Lexora Doc منصة متخصصة في إدارة ملفات الاستيراد والامتثال التجاري،
+              مع خدمات ASYCUDA ومراجعة الوثائق التجارية وتجهيز البيان الكمركي المسبق والنهائي.
             </p>
             {/* WhatsApp CTA */}
             <a
@@ -81,7 +81,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-white/30 text-xs">
-            &copy; {new Date().getFullYear()} Lexora DOC. جميع الحقوق محفوظة. المنصة لا تمثل جهة حكومية.
+            &copy; {new Date().getFullYear()} Lexora Doc. جميع الحقوق محفوظة. المنصة لا تمثل جهة حكومية.
           </p>
         </div>
       </div>

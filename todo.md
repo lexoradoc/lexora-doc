@@ -14,3 +14,11 @@
 - [x] مراجعة صفحة Contact للتأكد من توافقها مع الهوية الجديدة
 - [x] مراجعة نهائية شاملة لكل الصفحات
 - [x] حفظ checkpoint ونشر التحديثات
+
+## التعديلات النهائية - مارس 2026
+
+- [x] التحقق من رابط واتساب في جميع الملفات والتأكد من استخدام https://wa.me/qr/JBFDI6QYM3CFD1 حرفياً
+- [x] تحديث title الموقع في index.html إلى: LexoraDoc | خدمات ASYCUDA وإدارة ملفات الاستيراد
+- [x] تحديث meta description في index.html
+- [x] إضافة meta keywords وog:title وog:description
+- [x] مراجعة نهائية وحفظ checkpoint

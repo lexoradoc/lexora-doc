@@ -162,3 +162,86 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+/* ===== MICRO-INTERACTIONS ===== */
+
+/* Button Hover Effects */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+button:not(:disabled):hover,
+[role="button"]:not([aria-disabled="true"]):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(45, 47, 143, 0.15);
+}
+
+button:not(:disabled):active,
+[role="button"]:not([aria-disabled="true"]):active {
+  transform: translateY(0);
+}
+
+/* Link Hover Effects */
+a[href]:not(.no-underline) {
+  transition: all 0.2s ease-out;
+  position: relative;
+}
+
+a[href]:hover {
+  color: oklch(0.28 0.07 250);
+}
+
+/* Icon Hover Effects */
+svg {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+button:not(:disabled):hover svg,
+[role="button"]:not([aria-disabled="true"]):hover svg {
+  transform: scale(1.1);
+}
+
+/* Card Hover Effects */
+.card,
+[role="article"],
+.service-card,
+.pricing-card {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover,
+[role="article"]:hover,
+.service-card:hover,
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(45, 47, 143, 0.12);
+}
+
+/* Input Focus Effects */
+input:not(:disabled),
+textarea:not(:disabled),
+select:not(:disabled) {
+  transition: all 0.2s ease-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  transform: scale(1.01);
+  box-shadow: 0 0 0 3px rgba(45, 47, 143, 0.1);
+}
+
+/* Badge/Pill Animations */
+.badge,
+.pill,
+.tag {
+  transition: all 0.2s ease-out;
+}
+
+.badge:hover,
+.pill:hover,
+.tag:hover {
+  transform: scale(1.05);
+}

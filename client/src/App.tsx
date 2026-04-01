@@ -10,6 +10,10 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ServiceRequest from "./pages/ServiceRequest";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import ServiceDetail from "./pages/ServiceDetail";
 import Layout from "./components/Layout";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
@@ -17,11 +21,14 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-
       <Route path="/services" component={Services} />
+      <Route path="/services/:id" component={ServiceDetail} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/service-request" component={ServiceRequest} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={BlogPost} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

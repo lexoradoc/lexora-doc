@@ -7,16 +7,19 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import AsycudaServices from "./pages/AsycudaServices";
 import Services from "./pages/Services";
+import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
+import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"\t/"} component={Home} />
       <Route path={"/asycuda-services"} component={AsycudaServices} />
       <Route path="/services" component={Services} />
+      <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
@@ -34,6 +37,7 @@ function App() {
           <Layout>
             <Router />
           </Layout>
+          <FloatingWhatsAppButton />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

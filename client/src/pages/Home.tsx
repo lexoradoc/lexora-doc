@@ -25,6 +25,7 @@ import {
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "wouter";
+import Testimonials from "@/components/Testimonials";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-hero-Psp8nLL4ffUZTZtJe2cSMB.webp";
@@ -479,6 +480,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
     </div>
   );
 }

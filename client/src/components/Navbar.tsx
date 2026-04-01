@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/asycuda-services", label: "ASYCUDA" },
   { href: "/services", label: "الخدمات" },
+  { href: "/pricing", label: "الأسعار" },
   { href: "/about", label: "من نحن" },
   { href: "/contact", label: "تواصل معنا" },
 ];

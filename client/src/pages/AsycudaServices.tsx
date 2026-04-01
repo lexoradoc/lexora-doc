@@ -1,6 +1,6 @@
 /*
  * ASYCUDA Services — الخدمة المحورية الأساسية
- * دمج محتوى CCG + ASYCUDA في صفحة واحدة شاملة
+ * خدمات ASYCUDA المحورية
  * موجّه للبيع والتحويل عبر واتساب
  */
 import {
@@ -170,7 +170,7 @@ export default function AsycudaServices() {
         </div>
       </section>
 
-      {/* COMPLIANCE (CCG content) */}
+      {/* COMPLIANCE */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-14">

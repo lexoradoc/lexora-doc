@@ -1,6 +1,6 @@
 /*
  * LEXORA DOC — صفحة من نحن
- * ASYCUDA محورياً، بدون CCG وقوالب
+ * ASYCUDA محورياً
  * ألوان كحلي (#2D2F8F) وذهبي (#B8972A)
  */
 import { Button } from "@/components/ui/button";

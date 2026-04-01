@@ -1,7 +1,6 @@
 /*
  * Navbar — LEXORA DOC
  * كحلي (#2D2F8F) + ذهبي (#B8972A)
- * بدون CCG، بدون القوالب، ASYCUDA محورياً
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";

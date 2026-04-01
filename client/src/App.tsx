@@ -16,7 +16,7 @@ import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 function Router() {
   return (
     <Switch>
-      <Route path={"\t/"} component={Home} />
+      <Route path="/" component={Home} />
       <Route path={"/asycuda-services"} component={AsycudaServices} />
       <Route path="/services" component={Services} />
       <Route path="/pricing" component={Pricing} />

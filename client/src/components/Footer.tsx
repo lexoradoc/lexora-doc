@@ -10,7 +10,6 @@ const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
 const footerLinks = {
   الخدمات: [
-    { href: "/asycuda-services", label: "خدمات ASYCUDA" },
     { href: "/services", label: "جميع الخدمات" },
   ],
   الشركة: [

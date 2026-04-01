@@ -156,7 +156,7 @@ export default function Home() {
                 تواصل عبر واتساب الآن
               </a>
               <Link
-                href="/asycuda-services"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/30 text-white font-semibold text-base hover:bg-white/20 transition-all no-underline"
               >
                 تعرف على خدماتنا
@@ -268,7 +268,7 @@ export default function Home() {
 
           <div className="text-center mt-10">
             <Link
-              href="/asycuda-services"
+              href="/services"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#2D2F8F] text-white font-semibold hover:bg-[#232570] transition-all no-underline"
             >
               عرض جميع الخدمات
@@ -327,7 +327,7 @@ export default function Home() {
                   ابدأ عبر واتساب
                 </a>
                 <Link
-                  href="/asycuda-services"
+                  href="/services"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition-all no-underline"
                 >
                   عرض تفاصيل الخدمة

@@ -10,11 +10,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
-const darkHeroPages = ["/", "/asycuda-services"];
+const darkHeroPages = ["/"];
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
-  { href: "/asycuda-services", label: "ASYCUDA" },
   { href: "/services", label: "الخدمات" },
   { href: "/pricing", label: "الأسعار" },
   { href: "/about", label: "من نحن" },
@@ -91,7 +90,7 @@ export default function Navbar() {
             </a>
             <Button
               className="text-sm font-semibold bg-[#2D2F8F] hover:bg-[#232570] text-white"
-              onClick={() => (window.location.href = "/asycuda-services")}
+              onClick={() => (window.location.href = "/services")}
             >
               ابدأ طلبك
             </Button>
@@ -148,7 +147,7 @@ export default function Navbar() {
                 </a>
                 <Button
                   className="w-full bg-[#2D2F8F] hover:bg-[#232570] text-white font-semibold"
-                  onClick={() => (window.location.href = "/asycuda-services")}
+                  onClick={() => (window.location.href = "/services")}
                 >
                   ابدأ طلبك الآن
                 </Button>

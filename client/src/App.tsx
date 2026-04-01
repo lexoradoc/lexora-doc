@@ -15,7 +15,6 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ServiceDetail from "./pages/ServiceDetail";
 import Layout from "./components/Layout";
-import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 function Router() {
   return (
@@ -44,7 +43,6 @@ function App() {
           <Layout>
             <Router />
           </Layout>
-          <FloatingWhatsAppButton />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

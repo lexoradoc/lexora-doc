@@ -23,7 +23,7 @@ import {
   Landmark,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import Testimonials from "@/components/Testimonials";
 
@@ -117,12 +117,16 @@ function FAQItem({ item }: { item: (typeof faqs)[0] }) {
 }
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Lexora Doc - مراجعة وتقديم ملفات الاستيراد في العراق";
+  }, []);
+
   return (
     <div dir="rtl">
       {/* ===== HERO ===== */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover" />
+          <img src={HERO_BG} alt="Lexora Doc - مراجعة وتقديم ملفات الاستيراد في العراق" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-l from-[#1a1c5e]/95 via-[#2D2F8F]/85 to-[#1a1c5e]/70" />
         </div>
 

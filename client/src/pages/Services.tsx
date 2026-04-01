@@ -1,6 +1,6 @@
 /*
  * LEXORA DOC — صفحة الخدمات
- * ASYCUDA محورياً، بدون تكرار
+ * تجميع جميع الخدمات تحت "خدماتنا"
  * موجّه للبيع والتحويل عبر واتساب
  */
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import {
   MessageCircle,
   Landmark,
   Building2,
+  Zap,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -33,20 +34,13 @@ const services = [
     icon: ShieldCheck,
     title: "خدمات ASYCUDA الجمركية",
     description:
-      "الخدمة المحورية الأساسية في Lexora Doc. نتولى إعداد البيان الجمركي المسبق والنهائي، مراجعة ملفات الاستيراد، والتأكد من الامتثال الكامل لمتطلبات نظام ASYCUDA World ومتطلبات البنك المركزي العراقي.",
+      "إعداد البيان الجمركي المسبق والنهائي، مراجعة ملفات الاستيراد، والتأكد من الامتثال الكامل لمتطلبات نظام ASYCUDA World ومتطلبات البنك المركزي العراقي.",
     features: [
       "إعداد البيان الجمركي المسبق والنهائي",
       "مراجعة شاملة لملفات الاستيراد",
       "الامتثال لمتطلبات البنك المركزي",
       "تسريع إجراءات التخليص الجمركي",
     ],
-    color: "bg-[#2D2F8F]/10 text-[#2D2F8F]",
-    borderColor: "hover:border-[#2D2F8F]/20",
-    badge: "الخدمة الرئيسية",
-    badgeColor: "bg-[#2D2F8F]/10 text-[#2D2F8F]",
-    href: "/asycuda-services",
-    cta: "استكشف خدمات ASYCUDA",
-    isMain: true,
   },
   {
     icon: FileText,
@@ -59,13 +53,6 @@ const services = [
       "التحقق من توافق الفواتير",
       "اكتشاف الأخطاء والنواقص",
     ],
-    color: "bg-blue-50 text-blue-600",
-    borderColor: "hover:border-blue-200",
-    badge: null,
-    badgeColor: "",
-    href: null,
-    cta: "اطلب الخدمة",
-    isMain: false,
   },
   {
     icon: Landmark,
@@ -78,13 +65,6 @@ const services = [
       "مطابقة المستندات والبيانات",
       "تنظيم الملفات للتقديم",
     ],
-    color: "bg-amber-50 text-amber-600",
-    borderColor: "hover:border-amber-200",
-    badge: null,
-    badgeColor: "",
-    href: null,
-    cta: "اطلب الخدمة",
-    isMain: false,
   },
   {
     icon: Building2,
@@ -97,13 +77,6 @@ const services = [
       "تقارير دورية عن الملفات",
       "دعم متخصص مستمر",
     ],
-    color: "bg-emerald-50 text-emerald-600",
-    borderColor: "hover:border-emerald-200",
-    badge: null,
-    badgeColor: "",
-    href: null,
-    cta: "اطلب الخدمة",
-    isMain: false,
   },
 ];
 
@@ -116,57 +89,41 @@ export default function Services() {
           <motion.div
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="text-center max-w-3xl mx-auto"
           >
-            <div>
-              <motion.span
-                variants={fadeUp}
-                custom={0}
-                className="text-xs font-semibold text-[#2D2F8F] tracking-wider uppercase mb-3 block"
-              >
-                خدماتنا
-              </motion.span>
-              <motion.h1
-                variants={fadeUp}
-                custom={1}
-                className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight"
-              >
-                خدمات متخصصة في{" "}
-                <span className="text-[#2D2F8F]">ASYCUDA</span>{" "}
-                والجمارك
-              </motion.h1>
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                className="text-lg text-gray-500 leading-relaxed mb-8"
-              >
-                نقدم حلولاً شاملة لجميع احتياجاتك في إعداد الوثائق الجمركية،
-                مراجعة ملفات الاستيراد، والامتثال لمتطلبات البنك المركزي العراقي.
-              </motion.p>
-              <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-all shadow-md no-underline"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  تواصل معنا الآن
-                </a>
-                <Link href="/asycuda-services">
-                  <Button variant="outline" className="border-[#2D2F8F]/30 text-[#2D2F8F] hover:bg-[#2D2F8F]/5">
-                    خدمات ASYCUDA التفصيلية
-                    <ArrowLeft className="w-4 h-4 ms-2" />
-                  </Button>
-                </Link>
-              </motion.div>
-            </div>
+            <motion.span
+              variants={fadeUp}
+              custom={0}
+              className="text-xs font-semibold text-[#2D2F8F] tracking-wider uppercase mb-3 block"
+            >
+              خدماتنا
+            </motion.span>
+            <motion.h1
+              variants={fadeUp}
+              custom={1}
+              className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+            >
+              حلول شاملة في{" "}
+              <span className="text-[#2D2F8F]">ASYCUDA</span>{" "}
+              والجمارك
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              className="text-lg text-gray-500 leading-relaxed mb-8"
+            >
+              نقدم مجموعة متكاملة من الخدمات المتخصصة في إعداد الوثائق الجمركية، مراجعة ملفات الاستيراد، والامتثال الكامل لمتطلبات البنك المركزي العراقي.
+            </motion.p>
             <motion.div variants={fadeUp} custom={3}>
-              <img
-                src={SERVICES_BG}
-                alt="خدمات Lexora Doc"
-                className="rounded-2xl shadow-xl shadow-gray-900/10"
-              />
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-all shadow-md no-underline"
+              >
+                <MessageCircle className="w-5 h-5" />
+                ابدأ الآن
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -194,72 +151,113 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services Grid */}
       <section className="py-24 bg-white">
-        <div className="container space-y-8">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={fadeUp}
-              custom={i}
-              className={`bg-white rounded-2xl border ${service.isMain ? "border-[#2D2F8F]/20 shadow-md" : "border-gray-100"} p-8 lg:p-10 ${service.borderColor} hover:shadow-lg transition-all duration-300 relative`}
-            >
-              {service.badge && (
-                <span className={`absolute top-6 left-6 px-3 py-1 rounded-full text-xs font-semibold ${service.badgeColor}`}>
-                  {service.badge}
-                </span>
-              )}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <div className={`w-12 h-12 rounded-xl ${service.color} flex items-center justify-center mb-5`}>
-                    <service.icon className="w-6 h-6" />
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                    {service.title}
-                  </h2>
-                  <p className="text-gray-500 leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    {service.href ? (
-                      <Link href={service.href}>
-                        <Button className="bg-[#2D2F8F] hover:bg-[#232570] text-white text-sm">
-                          {service.cta}
-                          <ArrowLeft className="w-4 h-4 ms-2" />
-                        </Button>
-                      </Link>
-                    ) : (
-                      <a
-                        href={WHATSAPP_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20bd5a] transition-all no-underline"
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        {service.cta}
-                      </a>
-                    )}
-                  </div>
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={fadeUp}
+                custom={i}
+                className="bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-100 p-8 hover:shadow-lg hover:border-[#2D2F8F]/20 transition-all duration-300"
+              >
+                <div className={`w-12 h-12 rounded-xl bg-[#2D2F8F]/10 flex items-center justify-center mb-5`}>
+                  <service.icon className="w-6 h-6 text-[#2D2F8F]" />
                 </div>
-                <div className="space-y-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                  {service.description}
+                </p>
+                <div className="space-y-2 mb-6">
                   {service.features.map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-center gap-3 bg-gray-50 rounded-xl p-3"
+                      className="flex items-center gap-2"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                      <span className="text-gray-700 text-sm font-medium">
+                      <span className="text-gray-700 text-sm">
                         {feature}
                       </span>
                     </div>
                   ))}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20bd5a] transition-all no-underline"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  اطلب الخدمة
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-gray-50">
+        <div className="container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center max-w-2xl mx-auto mb-16"
+          >
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl font-bold text-gray-900 mb-4">
+              لماذا تختار Lexora Doc؟
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="text-gray-600">
+              نجمع بين الخبرة العميقة والتفاني في تقديم خدمات عالية الجودة
+            </motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Zap,
+                title: "سرعة التنفيذ",
+                description: "معالجة سريعة وفعالة لملفاتك دون تأخير",
+              },
+              {
+                icon: ShieldCheck,
+                title: "الدقة والامتثال",
+                description: "التزام كامل بمعايير ASYCUDA والبنك المركزي",
+              },
+              {
+                icon: MessageCircle,
+                title: "دعم متخصص",
+                description: "فريق خبراء متاح للإجابة على جميع استفساراتك",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
+                className="text-center"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-[#2D2F8F]/10 flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-[#2D2F8F]" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -272,10 +270,10 @@ export default function Services() {
             viewport={{ once: true }}
           >
             <motion.h2 variants={fadeUp} custom={0} className="text-3xl font-bold text-white mb-4">
-              هل تحتاج إلى مساعدة في اختيار الخدمة المناسبة؟
+              هل أنت مستعد للبدء؟
             </motion.h2>
             <motion.p variants={fadeUp} custom={1} className="text-white/70 max-w-lg mx-auto mb-8">
-              تواصل معنا عبر واتساب وسيساعدك فريقنا في تحديد الخدمة الأنسب لاحتياجاتك
+              تواصل معنا عبر واتساب وسيساعدك فريقنا في اختيار الخدمة المناسبة لاحتياجاتك
             </motion.p>
             <motion.div variants={fadeUp} custom={2}>
               <a

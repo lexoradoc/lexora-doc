@@ -18,8 +18,6 @@ import {
   Zap,
   Award,
   Phone,
-  ClipboardList,
-  Search,
   Landmark,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -41,34 +39,24 @@ const fadeUp = {
 
 const asycudaServices = [
   {
-    icon: FileText,
-    title: "إعداد البيان الجمركي المسبق",
-    description: "تحضير وصياغة البيان المسبق بدقة عالية وفقاً لمتطلبات نظام ASYCUDA World.",
-  },
-  {
-    icon: ClipboardList,
-    title: "إعداد البيان الجمركي النهائي",
-    description: "إعداد البيان النهائي الكامل بعد وصول البضاعة وفق اشتراطات هيئة الجمارك العراقية.",
-  },
-  {
     icon: Shield,
-    title: "مراجعة الوثائق التجارية",
-    description: "فحص شامل لجميع مستندات الاستيراد والتأكد من مطابقتها لتعليمات البنك المركزي العراقي.",
+    title: "خدمات ASYCUDA الجمركية",
+    description: "إعداد البيان الجمركي المسبق والنهائي، مراجعة ملفات الاستيراد، والامتثال الكامل لمتطلبات نظام ASYCUDA World.",
   },
   {
-    icon: Search,
-    title: "تدقيق HS Code",
-    description: "تصنيف البضاعة بدقة وفق نظام المنسق الدولي (HS Code) لتجنب أخطاء التعريفة الجمركية.",
+    icon: FileText,
+    title: "مراجعة الوثائق وتدقيق HS Code",
+    description: "مراجعة دقيقة لجميع الوثائق المرفقة بملف الاستيراد وتدقيق تصنيف HS Code للبضائع.",
   },
   {
-    icon: CheckCircle2,
-    title: "تدقيق الفواتير والمستندات",
-    description: "مراجعة الفواتير التجارية والتحقق من تطابقها مع المتطلبات التنظيمية لنظام ASYCUDA.",
+    icon: Landmark,
+    title: "الامتثال لتعليمات البنك المركزي",
+    description: "تنظيم ملفات التحويل المصرفي والاستيراد وفق التعليمات الصادرة عن البنك المركزي العراقي.",
   },
   {
     icon: Award,
-    title: "الامتثال لمتطلبات البنك المركزي",
-    description: "ضمان توافق جميع المستندات مع تعليمات البنك المركزي العراقي ومتطلبات التحويل المصرفي.",
+    title: "خدمات الشركات والمستوردين",
+    description: "حلول متكاملة للشركات الكبرى والمستوردين في إدارة ملفات الاستيراد بكفاءة عالية.",
   },
 ];
 
@@ -250,7 +238,7 @@ export default function Home() {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {asycudaServices.map((service, i) => (
               <motion.div
                 key={i}

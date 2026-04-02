@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { blogPosts } from "@/data/blogData";
 import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
+import { useEffect } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,6 +14,10 @@ const fadeUp = {
 };
 
 export default function Blog() {
+  useEffect(() => {
+    document.title = "المدونة - Lexora Doc | مقالات ونصائح ASYCUDA";
+  }, []);
+
   return (
     <div dir="rtl">
       {/* Hero */}

@@ -14,7 +14,7 @@ import {
   Star,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
@@ -160,6 +160,10 @@ function FAQItem({ item }: { item: (typeof faqs)[0] }) {
 }
 
 export default function Pricing() {
+  useEffect(() => {
+    document.title = "الأسعار والباقات - Lexora Doc | مراجعة وتقديم الملفات";
+  }, []);
+
   return (
     <div dir="rtl">
       {/* Hero */}

@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
@@ -24,6 +24,10 @@ const fadeUp = {
 };
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = "تواصل معنا - Lexora Doc | واتساب وبريد إلكتروني";
+  }, []);
+
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleWhatsApp = (e: React.FormEvent) => {

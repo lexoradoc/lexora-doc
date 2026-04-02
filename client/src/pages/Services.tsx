@@ -3,6 +3,7 @@
  * تجميع جميع الخدمات تحت "خدماتنا"
  * موجّه للبيع والتحويل عبر واتساب
  */
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   FileText,
@@ -81,6 +82,10 @@ const services = [
 ];
 
 export default function Services() {
+  useEffect(() => {
+    document.title = "خدماتنا - Lexora Doc | خدمات ASYCUDA والجمارك";
+  }, []);
+
   return (
     <div dir="rtl">
       {/* Hero */}

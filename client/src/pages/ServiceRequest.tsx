@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import ServiceRequestForm from "@/components/ServiceRequestForm";
 import { CheckCircle2, Clock, Shield } from "lucide-react";
@@ -12,6 +13,10 @@ const fadeUp = {
 };
 
 export default function ServiceRequest() {
+  useEffect(() => {
+    document.title = "طلب خدمة - Lexora Doc | أرسل طلبك الآن";
+  }, []);
+
   const benefits = [
     {
       icon: CheckCircle2,

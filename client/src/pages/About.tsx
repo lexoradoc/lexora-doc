@@ -3,6 +3,7 @@
  * ASYCUDA محورياً
  * ألوان كحلي (#2D2F8F) وذهبي (#B8972A)
  */
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Target,
@@ -56,6 +57,10 @@ const values = [
 ];
 
 export default function About() {
+  useEffect(() => {
+    document.title = "من نحن - Lexora Doc | خبراء ASYCUDA في العراق";
+  }, []);
+
   return (
     <div dir="rtl">
       {/* Hero */}

@@ -4,7 +4,7 @@
  * شريط ثقة: البنك المركزي العراقي + ASYCUDA + الهيئة العامة للجمارك
  */
 import { Link } from "wouter";
-import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle } from "lucide-react";
+import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle, Linkedin, Instagram } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
 
@@ -99,6 +99,14 @@ export default function Footer() {
             <a href="tel:07807437788" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
               <Phone className="w-3.5 h-3.5" />
               07807437788
+            </a>
+            <a href="https://linkedin.com/lexoradoc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
+              <Linkedin className="w-3.5 h-3.5" />
+              LinkedIn
+            </a>
+            <a href="https://www.instagram.com/lexoradoc?igsh=bThvbHFjNjF3aDBp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
+              <Instagram className="w-3.5 h-3.5" />
+              Instagram
             </a>
           </div>
           <p className="text-white/30 text-xs">

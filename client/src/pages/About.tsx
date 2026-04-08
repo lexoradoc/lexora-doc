@@ -58,7 +58,7 @@ const values = [
 
 export default function About() {
   useEffect(() => {
-    document.title = "من نحن - Lexora Doc | خبراء ASYCUDA في العراق";
+    document.title = "من نحن - Lexora Doc | خبراء ASYCUDA والتخليص الجمركي في العراق";
   }, []);
 
   return (

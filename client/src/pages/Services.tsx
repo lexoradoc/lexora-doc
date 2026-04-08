@@ -18,7 +18,7 @@ import {
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
-const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 const SERVICES_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-hscode-CmFen8YZEZHZzkgg9yMicb.webp";
 
 const fadeUp = {
@@ -83,7 +83,7 @@ const services = [
 
 export default function Services() {
   useEffect(() => {
-    document.title = "خدماتنا - Lexora Doc | خدمات ASYCUDA والجمارك";
+    document.title = "خدمات ASYCUDA والتخليص الجمركي - Lexora Doc | البنك المركزي العراقي";
   }, []);
 
   return (

@@ -15,7 +15,7 @@ const fadeUp = {
 
 export default function Blog() {
   useEffect(() => {
-    document.title = "المدونة - Lexora Doc | مقالات ونصائح ASYCUDA";
+    document.title = "مدونة ASYCUDA والجمارك - Lexora Doc | نصائح الاستيراد والبنك المركزي العراقي";
   }, []);
 
   return (

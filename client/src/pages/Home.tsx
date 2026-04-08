@@ -2,7 +2,7 @@
  * LEXORA DOC — الصفحة الرئيسية
  * ASYCUDA محورياً
  * كحلي (#2D2F8F) + ذهبي (#B8972A)
- * موجّه للبيع والتحويل عبر واتساب
+ * موجّه للبيع والتحويل - نموذج الطلب هو الـ Primary CTA
  */
 import { Button } from "@/components/ui/button";
 import {
@@ -19,11 +19,16 @@ import {
   Award,
   Phone,
   Landmark,
+  ClipboardCheck,
+  Send,
+  FileSearch,
+  PackageCheck,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import Testimonials from "@/components/Testimonials";
+import ServiceRequestModal from "@/components/ServiceRequestModal";
 
 const WHATSAPP_URL = "https://wa.me/9647844342200";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-hero-Psp8nLL4ffUZTZtJe2cSMB.webp";
@@ -67,6 +72,46 @@ const stats = [
   { value: "24h", label: "وقت الاستجابة" },
 ];
 
+const workflowSteps = [
+  {
+    step: "01",
+    icon: Send,
+    title: "استلام الملف",
+    description: "أرسل مستنداتك عبر واتساب أو نموذج الطلب",
+    color: "bg-blue-50 text-blue-600 border-blue-200",
+  },
+  {
+    step: "02",
+    icon: FileSearch,
+    title: "التدقيق والمراجعة",
+    description: "فريقنا يراجع كل مستند بدقة ويحدد الأخطاء والنواقص",
+    color: "bg-amber-50 text-amber-600 border-amber-200",
+  },
+  {
+    step: "03",
+    icon: ClipboardCheck,
+    title: "التقديم الرسمي",
+    description: "نُعدّ البيان الجمركي ونقدمه عبر نظام ASYCUDA World",
+    color: "bg-emerald-50 text-emerald-600 border-emerald-200",
+  },
+  {
+    step: "04",
+    icon: PackageCheck,
+    title: "القبول والتسليم",
+    description: "تسليم الملف جاهزاً ومعتمداً مع متابعة حتى الإفراج",
+    color: "bg-purple-50 text-purple-600 border-purple-200",
+  },
+];
+
+const trustedSectors = [
+  { icon: "🏭", label: "شركات صناعية" },
+  { icon: "🏗️", label: "شركات مقاولات" },
+  { icon: "🍎", label: "مستوردو مواد غذائية" },
+  { icon: "⚡", label: "مستوردو أجهزة كهربائية" },
+  { icon: "🚗", label: "مستوردو قطع غيار" },
+  { icon: "💊", label: "شركات أدوية ومستلزمات طبية" },
+];
+
 const faqs = [
   {
     question: "ما هو نظام ASYCUDA؟",
@@ -74,7 +119,7 @@ const faqs = [
   },
   {
     question: "كيف يمكنني البدء بطلب الخدمة؟",
-    answer: "يمكنك التواصل معنا مباشرة عبر واتساب أو ملء نموذج الطلب في صفحة ASYCUDA. سيتواصل معك فريقنا خلال 24 ساعة.",
+    answer: "يمكنك النقر على زر 'ابدأ طلبك' وملء النموذج البسيط، أو التواصل معنا مباشرة عبر واتساب. سيتواصل معك فريقنا خلال 24 ساعة.",
   },
   {
     question: "ما هي المستندات المطلوبة؟",
@@ -105,8 +150,10 @@ function FAQItem({ item }: { item: (typeof faqs)[0] }) {
 }
 
 export default function Home() {
+  const [showRequestModal, setShowRequestModal] = useState(false);
+
   useEffect(() => {
-    document.title = "Lexora Doc - مراجعة وتقديم ملفات الاستيراد في العراق";
+    document.title = "Lexora Doc - إدارة ملفات الاستيراد | ASYCUDA العراق | تخليص جمركي";
   }, []);
 
   return (
@@ -138,15 +185,14 @@ export default function Home() {
             </motion.p>
 
             <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#20bd5a] transition-all shadow-lg no-underline"
+              {/* Primary CTA - ابدأ طلبك */}
+              <Button
+                onClick={() => setShowRequestModal(true)}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#B8972A] text-white font-bold text-base hover:bg-[#a6861f] transition-all shadow-lg h-auto"
               >
-                <MessageCircle className="w-5 h-5" />
-                تواصل عبر واتساب الآن
-              </a>
+                <FileText className="w-5 h-5" />
+                ابدأ طلبك الآن
+              </Button>
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/30 text-white font-semibold text-base hover:bg-white/20 transition-all no-underline"
@@ -214,8 +260,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== ASYCUDA SERVICES ===== */}
+      {/* ===== WORKFLOW INFOGRAPHIC ===== */}
       <section className="py-20 bg-white">
+        <div className="container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <motion.div variants={fadeUp} custom={0}>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D2F8F]/8 border border-[#2D2F8F]/15 mb-4">
+                <ClipboardCheck className="w-3.5 h-3.5 text-[#2D2F8F]" />
+                <span className="text-[#2D2F8F] text-xs font-semibold">كيف نعمل</span>
+              </span>
+            </motion.div>
+            <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              خطوات العمل
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={2} className="text-gray-500 max-w-2xl mx-auto">
+              من استلام الملف إلى القبول النهائي — عملية واضحة ومنظمة
+            </motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {workflowSteps.map((step, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
+                className="relative text-center"
+              >
+                {/* Connector Line (hidden on mobile) */}
+                {i < workflowSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-12 -left-3 w-6 h-0.5 bg-gray-200" />
+                )}
+                <div className={`w-20 h-20 rounded-2xl ${step.color} border-2 flex items-center justify-center mx-auto mb-4 relative`}>
+                  <step.icon className="w-8 h-8" />
+                  <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-[#2D2F8F] text-white text-xs font-bold flex items-center justify-center">
+                    {step.step}
+                  </span>
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2 text-sm">{step.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== ASYCUDA SERVICES ===== */}
+      <section className="py-20 bg-gray-50">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -287,6 +385,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== TRUSTED SECTORS ===== */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <motion.h2 variants={fadeUp} custom={0} className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              قطاعات تثق بخدماتنا
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="text-gray-500 text-sm">
+              نخدم مختلف القطاعات التجارية والصناعية في العراق
+            </motion.p>
+          </motion.div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
+            {trustedSectors.map((sector, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
+                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-[#2D2F8F]/20 hover:shadow-sm transition-all"
+              >
+                <span className="text-2xl">{sector.icon}</span>
+                <span className="text-xs font-semibold text-gray-700 text-center">{sector.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA SECTION ===== */}
       <section className="py-20 bg-gradient-to-br from-[#2D2F8F] to-[#1a1c5e]">
         <div className="container">
@@ -309,21 +442,22 @@ export default function Home() {
                 أرسل مستنداتك الآن وسيتولى فريقنا إعداد ملف ASYCUDA الكامل خلال 24-48 ساعة.
               </motion.p>
               <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  onClick={() => setShowRequestModal(true)}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#B8972A] text-white font-bold text-base hover:bg-[#a6861f] transition-all shadow-lg h-auto"
+                >
+                  <FileText className="w-5 h-5" />
+                  ابدأ طلبك الآن
+                </Button>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#20bd5a] transition-all shadow-lg no-underline"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  ابدأ عبر واتساب
-                </a>
-                <Link
-                  href="/services"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition-all no-underline"
                 >
-                  عرض تفاصيل الخدمة
-                </Link>
+                  <MessageCircle className="w-5 h-5" />
+                  أو تواصل عبر واتساب
+                </a>
               </motion.div>
             </motion.div>
           </div>
@@ -389,41 +523,6 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            {/* Hidden original card - replaced by image */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="hidden bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-2">ابدأ طلبك الآن</h3>
-              <p className="text-gray-500 text-sm mb-6">أرسل لنا تفاصيل ملفك عبر واتساب وسنتواصل معك فوراً</p>
-              <div className="space-y-3 mb-6">
-                {[
-                  "إرسال المستندات عبر واتساب",
-                  "مراجعة الملف من قبل الخبراء",
-                  "إعداد البيان الجمركي الكامل",
-                  "تسليم الملف جاهزاً للتقديم",
-                ].map((step, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2D2F8F] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
-                      {i + 1}
-                    </div>
-                    <span className="text-gray-700 text-sm">{step}</span>
-                  </div>
-                ))}
-              </div>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-all no-underline"
-              >
-                <MessageCircle className="w-5 h-5" />
-                تواصل معنا عبر واتساب
-              </a>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -475,6 +574,12 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Service Request Modal */}
+      <ServiceRequestModal
+        open={showRequestModal}
+        onClose={() => setShowRequestModal(false)}
+      />
     </div>
   );
 }

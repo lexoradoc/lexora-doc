@@ -161,7 +161,7 @@ function FAQItem({ item }: { item: (typeof faqs)[0] }) {
 
 export default function Pricing() {
   useEffect(() => {
-    document.title = "الأسعار والباقات - Lexora Doc | مراجعة وتقديم الملفات";
+    document.title = "أسعار مراجعة وتقديم ملفات الاستيراد - Lexora Doc | باقات ASYCUDA العراق";
   }, []);
 
   return (
@@ -297,6 +297,36 @@ export default function Pricing() {
             <p className="text-amber-800 text-sm">
               يتم تحديد تفاصيل العمل النهائية بعد الاطلاع على الملف. الأسعار المعروضة هي أسعار أساسية وقد تختلف حسب حجم وتعقيد الملف.
             </p>
+          </motion.div>
+
+          {/* باقات مخصصة للشركات */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={3}
+            className="mt-8 p-8 bg-gradient-to-br from-[#2D2F8F]/5 to-[#2D2F8F]/10 border border-[#2D2F8F]/20 rounded-2xl max-w-2xl mx-auto"
+          >
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/15 border border-[#B8972A]/30 mb-4">
+                <Star className="w-3.5 h-3.5 text-[#B8972A]" />
+                <span className="text-[#B8972A] text-xs font-semibold">للشركات والمستوردين الدائمين</span>
+              </div>
+              <h3 className="text-xl font-bold text-[#2D2F8F] mb-3">باقات مخصصة للشركات الكبيرة</h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                نقدم باقات خاصة ومخصصة للشركات الكبيرة والمستوردين الدائمين تشمل أسعاراً تنافسية وأولوية في المعالجة ومتابعة مستمرة لجميع الملفات.
+              </p>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#2D2F8F] text-white font-semibold hover:bg-[#232570] transition-all no-underline"
+              >
+                <MessageCircle className="w-4 h-4" />
+                تواصل للاستفسار
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

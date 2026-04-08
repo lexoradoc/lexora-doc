@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
 import { blogPosts } from "@/data/blogData";
-import { Calendar, Clock, ArrowRight, Tag, MessageCircle } from "lucide-react";
+import { Calendar, ArrowRight, Tag, MessageCircle, ArrowLeft, FileText, CreditCard } from "lucide-react";
 import { Streamdown } from "streamdown";
 
 const WHATSAPP_URL = "https://wa.me/9647844342200";
@@ -126,6 +126,41 @@ export default function BlogPost() {
             </div>
           </motion.div>
 
+          {/* Internal Links - روابط داخلية للخدمات والأسعار */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={1.5}
+            className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4"
+          >
+            <Link href="/services" className="no-underline">
+              <div className="group flex items-center gap-4 p-5 bg-gradient-to-br from-[#2D2F8F]/5 to-white rounded-xl border border-[#2D2F8F]/15 hover:border-[#2D2F8F]/40 hover:shadow-md transition-all">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#2D2F8F]/10 flex items-center justify-center">
+                  <FileText className="w-5 h-5 text-[#2D2F8F]" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 text-sm group-hover:text-[#2D2F8F] transition-colors">تعرف على خدماتنا</h4>
+                  <p className="text-gray-500 text-xs mt-0.5">مراجعة الملفات، ASYCUDA، الامتثال</p>
+                </div>
+                <ArrowLeft className="w-4 h-4 text-gray-400 group-hover:text-[#2D2F8F] ms-auto transition-colors" />
+              </div>
+            </Link>
+            <Link href="/pricing" className="no-underline">
+              <div className="group flex items-center gap-4 p-5 bg-gradient-to-br from-[#B8972A]/5 to-white rounded-xl border border-[#B8972A]/15 hover:border-[#B8972A]/40 hover:shadow-md transition-all">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#B8972A]/10 flex items-center justify-center">
+                  <CreditCard className="w-5 h-5 text-[#B8972A]" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 text-sm group-hover:text-[#B8972A] transition-colors">الأسعار والباقات</h4>
+                  <p className="text-gray-500 text-xs mt-0.5">باقات مراجعة وتقديم الملفات</p>
+                </div>
+                <ArrowLeft className="w-4 h-4 text-gray-400 group-hover:text-[#B8972A] ms-auto transition-colors" />
+              </div>
+            </Link>
+          </motion.div>
+
           {/* CTA */}
           <motion.div
             initial="hidden"
@@ -133,7 +168,7 @@ export default function BlogPost() {
             viewport={{ once: true }}
             variants={fadeUp}
             custom={2}
-            className="mt-12 p-8 bg-gradient-to-br from-[#2D2F8F]/5 to-white rounded-2xl border border-[#2D2F8F]/20 text-center"
+            className="mt-8 p-8 bg-gradient-to-br from-[#2D2F8F]/5 to-white rounded-2xl border border-[#2D2F8F]/20 text-center"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-3">هل تحتاج مساعدة في ملفك؟</h3>
             <p className="text-gray-600 text-sm mb-6">

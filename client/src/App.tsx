@@ -16,6 +16,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ServiceDetail from "./pages/ServiceDetail";
 import Layout from "./components/Layout";
+import Terms from "./pages/Terms";
 
 function Router() {
   return (
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/service-request" component={ServiceRequest} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogPost} />
+      <Route path="/terms" component={Terms} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

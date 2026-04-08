@@ -19,6 +19,7 @@ const footerLinks = {
     { href: "/about", label: "من نحن" },
     { href: "/blog", label: "المدونة" },
     { href: "/contact", label: "تواصل معنا" },
+    { href: "/terms", label: "الشروط والأحكام" },
   ],
 };
 

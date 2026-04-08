@@ -47,13 +47,15 @@ export default function Footer() {
 
       {/* Official Logo Seal */}
       <div className="py-10 flex flex-col items-center justify-center border-b border-white/5">
-        <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
-          alt="Lexora Doc"
-          className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90"
-          style={{ imageRendering: 'auto' }}
-        />
-        <p className="text-white/30 text-xs mt-3 tracking-wider font-medium">إدارة ملفات الاستيراد والامتثال التجاري</p>
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-5 border border-white/10">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
+            alt="Lexora Doc"
+            className="h-16 md:h-20 w-auto object-contain"
+            style={{ imageRendering: 'auto' }}
+          />
+        </div>
+        <p className="text-white/30 text-xs mt-4 tracking-wider font-medium">إدارة ملفات الاستيراد والامتثال التجاري</p>
       </div>
 
       <div className="container py-14">

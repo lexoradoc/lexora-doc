@@ -168,9 +168,10 @@ export default function Home() {
         {/* Logo Watermark */}
         <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none overflow-hidden">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-transparent_95497de5.png"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
             alt=""
             className="w-[500px] h-auto opacity-[0.05] select-none"
+            style={{ filter: 'brightness(2) grayscale(0.3)' }}
           />
         </div>
 

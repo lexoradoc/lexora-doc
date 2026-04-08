@@ -1,18 +1,19 @@
 /*
  * Contact — LEXORA DOC
- * واتساب + إيميل كخيارات للتواصل
+ * واتساب + إيميل + التواصل مع الإدارة العليا
  */
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Send, Clock, ShieldCheck, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 const WHATSAPP_URL = "https://wa.me/9647844342200";
 const EMAIL_ADDRESS = "info@lexoradoc.com";
+const MD_EMAIL = "md@lexoradoc.com";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -113,7 +114,7 @@ export default function Contact() {
               </motion.div>
 
               {/* Email Card */}
-              <motion.div variants={fadeUp} custom={1} className="mb-8">
+              <motion.div variants={fadeUp} custom={1} className="mb-4">
                 <div className="p-6 rounded-2xl bg-blue-50/50 border-2 border-blue-100">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
@@ -134,8 +135,57 @@ export default function Contact() {
                 </div>
               </motion.div>
 
+              {/* ===== MD Executive Contact Card ===== */}
+              <motion.div variants={fadeUp} custom={2} className="mb-8">
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-[#0f1035] to-[#1a1c5e] border-2 border-[#B8972A]/30 overflow-hidden">
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 left-0 w-24 h-24 bg-[#B8972A]/5 rounded-br-[60px]" />
+                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#B8972A]/5 rounded-tl-[40px]" />
+
+                  <div className="relative z-10">
+                    {/* Header with shield icon */}
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-14 h-14 rounded-xl bg-[#B8972A]/15 border border-[#B8972A]/25 flex items-center justify-center">
+                        <ShieldCheck className="w-7 h-7 text-[#B8972A]" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white text-lg">التواصل مع الإدارة العليا</h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Award className="w-3.5 h-3.5 text-[#B8972A]" />
+                          <span className="text-[#B8972A] text-sm font-semibold">المدير المفوض | Managing Director</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="w-full h-px bg-gradient-to-l from-transparent via-[#B8972A]/30 to-transparent mb-5" />
+
+                    {/* Trust message */}
+                    <p className="text-white/60 text-sm leading-relaxed mb-5">
+                      للمراسلات الرسمية، العقود، والامتثال لضوابط البنك المركزي العراقي.
+                    </p>
+
+                    {/* Email link */}
+                    <a
+                      href={`mailto:${MD_EMAIL}?subject=${encodeURIComponent("مراسلة رسمية — Lexora Doc")}`}
+                      className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl bg-[#B8972A] text-white font-bold hover:bg-[#a6872a] transition-all no-underline group"
+                    >
+                      <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                      <span>{MD_EMAIL}</span>
+                    </a>
+
+                    {/* Seal badge */}
+                    <div className="flex items-center justify-center gap-2 mt-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#B8972A]/40" />
+                      <span className="text-white/40 text-xs">قناة تواصل رسمية ومعتمدة</span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#B8972A]/40" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
               {/* Other Contact Methods */}
-              <motion.div variants={fadeUp} custom={2} className="space-y-4 mb-8">
+              <motion.div variants={fadeUp} custom={3} className="space-y-4 mb-8">
                 <h3 className="font-bold text-gray-900 text-lg">معلومات التواصل</h3>
                 {[
                   { icon: Mail, title: "البريد الإلكتروني", value: EMAIL_ADDRESS, href: `mailto:${EMAIL_ADDRESS}`, color: "bg-blue-50 text-blue-600" },
@@ -159,7 +209,7 @@ export default function Contact() {
               </motion.div>
 
               {/* Working Hours */}
-              <motion.div variants={fadeUp} custom={3} className="p-4 rounded-xl bg-gray-50 border border-gray-100">
+              <motion.div variants={fadeUp} custom={4} className="p-4 rounded-xl bg-gray-50 border border-gray-100">
                 <div className="flex items-center gap-2 mb-3">
                   <Clock className="w-4 h-4 text-[#2D2F8F]" />
                   <span className="font-semibold text-gray-900 text-sm">أوقات العمل</span>

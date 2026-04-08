@@ -2,11 +2,13 @@
  * Footer — Lexora Doc
  * كحلي + ذهبي، ASYCUDA محورياً، واتساب بارز
  * شريط ثقة: البنك المركزي العراقي + ASYCUDA + الهيئة العامة للجمارك
+ * قسم المراسلات الرسمية: المدير المفوض
  */
 import { Link } from "wouter";
-import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle, Linkedin, Instagram } from "lucide-react";
+import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle, Linkedin, Instagram, ShieldCheck } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/9647844342200";
+const MD_EMAIL = "md@lexoradoc.com";
 
 const footerLinks = {
   الخدمات: [
@@ -91,8 +93,43 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* ===== المراسلات الرسمية — المدير المفوض ===== */}
+        <div className="mt-10 pt-8 border-t border-white/10">
+          <div className="max-w-2xl mx-auto">
+            <div className="relative p-6 rounded-2xl bg-gradient-to-l from-[#B8972A]/8 to-transparent border border-[#B8972A]/20">
+              {/* Decorative line */}
+              <div className="absolute top-0 right-6 w-12 h-0.5 bg-[#B8972A]/40 rounded-full" />
+
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                {/* Shield icon */}
+                <div className="w-12 h-12 rounded-xl bg-[#B8972A]/15 border border-[#B8972A]/25 flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6 text-[#B8972A]" />
+                </div>
+
+                {/* Content */}
+                <div className="flex-1">
+                  <h4 className="text-white font-bold text-sm mb-1">المراسلات الرسمية</h4>
+                  <p className="text-white/40 text-xs mb-2">المدير المفوض | Managing Director</p>
+                  <p className="text-white/50 text-xs leading-relaxed">
+                    للمراسلات الرسمية، العقود، والامتثال لضوابط البنك المركزي العراقي.
+                  </p>
+                </div>
+
+                {/* Email link */}
+                <a
+                  href={`mailto:${MD_EMAIL}?subject=${encodeURIComponent("مراسلة رسمية — Lexora Doc")}`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#B8972A]/15 border border-[#B8972A]/30 text-[#B8972A] font-bold text-sm hover:bg-[#B8972A]/25 transition-all no-underline flex-shrink-0"
+                >
+                  <Mail className="w-4 h-4" />
+                  {MD_EMAIL}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Contact Quick */}
-        <div className="mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex flex-wrap gap-5 text-sm text-white/50">
             <a href="mailto:info@lexoradoc.com" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
               <Mail className="w-3.5 h-3.5" />

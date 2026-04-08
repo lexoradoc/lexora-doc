@@ -25,7 +25,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import Testimonials from "@/components/Testimonials";
 
-const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-hero-Psp8nLL4ffUZTZtJe2cSMB.webp";
 
 const fadeUp = {

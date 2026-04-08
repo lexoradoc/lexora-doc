@@ -6,7 +6,7 @@
 import { Link } from "wouter";
 import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle, Linkedin, Instagram } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 
 const footerLinks = {
   الخدمات: [

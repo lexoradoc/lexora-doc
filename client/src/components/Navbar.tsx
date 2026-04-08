@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 
 const darkHeroPages = ["/"];
 

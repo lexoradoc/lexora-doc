@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 export default function FloatingWhatsAppButton() {
-  const whatsappLink = "https://wa.me/qr/JBFDI6QYM3CFD1";
+  const whatsappLink = "https://wa.me/9647844342200";
 
   return (
     <a

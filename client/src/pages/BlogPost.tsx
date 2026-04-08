@@ -4,7 +4,7 @@ import { blogPosts } from "@/data/blogData";
 import { Calendar, Clock, ArrowRight, Tag, MessageCircle } from "lucide-react";
 import { Streamdown } from "streamdown";
 
-const WHATSAPP_URL = "https://wa.me/qr/JBFDI6QYM3CFD1";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

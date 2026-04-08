@@ -11,9 +11,11 @@ const WHATSAPP_URL = "https://wa.me/9647844342200";
 const footerLinks = {
   الخدمات: [
     { href: "/services", label: "جميع الخدمات" },
+    { href: "/pricing", label: "الأسعار والباقات" },
   ],
   الشركة: [
     { href: "/about", label: "من نحن" },
+    { href: "/blog", label: "المدونة" },
     { href: "/contact", label: "تواصل معنا" },
   ],
 };

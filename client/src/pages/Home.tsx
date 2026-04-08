@@ -165,6 +165,16 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-l from-[#1a1c5e]/95 via-[#2D2F8F]/85 to-[#1a1c5e]/70" />
         </div>
 
+        {/* Logo Watermark */}
+        <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none overflow-hidden">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
+            alt=""
+            className="w-[500px] h-auto opacity-[0.05] select-none"
+            style={{ filter: 'brightness(2) grayscale(0.3)' }}
+          />
+        </div>
+
         <div className="container relative z-10 pt-28 pb-24">
           <motion.div initial="hidden" animate="visible" className="max-w-3xl">
             <motion.div variants={fadeUp} custom={0}>

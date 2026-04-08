@@ -58,7 +58,8 @@ export default function Navbar() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
                 alt="Lexora Doc"
-                className="h-10 w-auto object-contain"
+                className="h-[3.125rem] w-auto object-contain"
+                style={{ imageRendering: 'auto' }}
               />
             </Link>
 

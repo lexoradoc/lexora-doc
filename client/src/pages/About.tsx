@@ -128,6 +128,25 @@ export default function About() {
       {/* About Content */}
       <section className="py-24">
         <div className="container">
+          {/* Logo with Drop Shadow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="flex justify-center mb-14"
+          >
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
+              alt="Lexora Doc"
+              className="h-24 md:h-28 w-auto object-contain"
+              style={{
+                filter: 'drop-shadow(0 8px 24px rgba(45, 47, 143, 0.12)) drop-shadow(0 2px 8px rgba(45, 47, 143, 0.08))',
+                imageRendering: 'auto',
+              }}
+            />
+          </motion.div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <motion.div
               initial="hidden"

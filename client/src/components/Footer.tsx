@@ -45,17 +45,21 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Official Logo Seal */}
+      <div className="py-10 flex flex-col items-center justify-center border-b border-white/5">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
+          alt="Lexora Doc"
+          className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90"
+          style={{ imageRendering: 'auto' }}
+        />
+        <p className="text-white/30 text-xs mt-3 tracking-wider font-medium">إدارة ملفات الاستيراد والامتثال التجاري</p>
+      </div>
+
       <div className="container py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
-                alt="Lexora Doc"
-                className="h-12 w-auto object-contain"
-              />
-            </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-md mb-6">
               Lexora Doc منصة متخصصة في إدارة ملفات الاستيراد والامتثال التجاري
               وفق تعليمات البنك المركزي العراقي، مع خدمات ASYCUDA ومراجعة الوثائق

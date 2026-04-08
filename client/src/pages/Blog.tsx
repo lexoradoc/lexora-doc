@@ -90,10 +90,6 @@ export default function Blog() {
                           <Calendar className="w-3.5 h-3.5" />
                           <span>{new Date(post.date).toLocaleDateString("ar-IQ")}</span>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5" />
-                          <span>{post.readTime}</span>
-                        </div>
                       </div>
 
                       {/* Tags */}

@@ -5,10 +5,61 @@
  * قسم المراسلات الرسمية: الإدارة العامة
  */
 import { Link } from "wouter";
-import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle, Linkedin, Instagram, ShieldCheck } from "lucide-react";
+import { MessageCircle, Mail, Phone, Landmark, Shield, CheckCircle, Linkedin, Instagram, ShieldCheck, Send } from "lucide-react";
+import { useState } from "react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 const WHATSAPP_URL = "https://wa.me/07844342200";
 const MGMT_EMAIL = "management@lexoradoc.com";
+
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const subscribe = trpc.newsletter.subscribe.useMutation();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast.error("يرجى إدخال بريدك الإلكتروني");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const result = await subscribe.mutateAsync({ email });
+      if (result.success) {
+        toast.success(result.isNew ? "تم الاشتراك بنجاح!" : "أنت مشترك بالفعل");
+        setEmail("");
+      }
+    } catch (error: any) {
+      toast.error(error?.message || "حدث خطأ أثناء الاشتراك");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="بريدك الإلكتروني"
+        className="flex-1 px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-[#B8972A]/50 transition-colors"
+        disabled={isLoading}
+      />
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="px-5 py-2.5 rounded-lg bg-[#B8972A] text-white font-semibold text-sm hover:bg-[#a87d1f] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap"
+      >
+        <Send className="w-4 h-4" />
+        {isLoading ? "جاري..." : "اشترك"}
+      </button>
+    </form>
+  );
+}
 
 const footerLinks = {
   الخدمات: [
@@ -61,6 +112,13 @@ export default function Footer() {
       </div>
 
       <div className="container py-14">
+        {/* Newsletter Section */}
+        <div className="mb-10 p-6 rounded-2xl bg-gradient-to-l from-[#B8972A]/8 to-transparent border border-[#B8972A]/20">
+          <h4 className="text-white font-bold text-sm mb-2">اشترك في النشرة البريدية</h4>
+          <p className="text-white/50 text-xs mb-4">احصل على آخر الأخبار والعروض الخاصة مباشرة في بريدك</p>
+          <NewsletterForm />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">

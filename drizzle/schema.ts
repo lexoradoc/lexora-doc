@@ -51,3 +51,18 @@ export const asycudaRequests = mysqlTable("asycuda_requests", {
 
 export type AsycudaRequest = typeof asycudaRequests.$inferSelect;
 export type InsertAsycudaRequest = typeof asycudaRequests.$inferInsert;
+
+/**
+ * Newsletter Subscribers Table
+ * Stores email addresses of users who subscribe to the newsletter
+ */
+export const newsletterSubscribers = mysqlTable("newsletter_subscribers", {
+  id: int("id").autoincrement().primaryKey(),
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  status: mysqlEnum("status", ["active", "inactive", "unsubscribed"]).default("active").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+});
+
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;

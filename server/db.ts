@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, asycudaRequests } from "../drizzle/schema";
+import { InsertUser, users, asycudaRequests, newsletterSubscribers, InsertNewsletterSubscriber } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -153,6 +153,56 @@ export async function updateAsycudaRequestStatus(id: number, status: string) {
   }
 
   return await db.update(asycudaRequests).set({ status: status as any }).where(eq(asycudaRequests.id, id));
+}
+
+export async function subscribeToNewsletter(email: string) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  try {
+    // Check if email already exists
+    const existing = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.email, email))
+      .limit(1);
+
+    if (existing.length > 0) {
+      // If already subscribed but inactive, reactivate
+      if (existing[0].status === "unsubscribed") {
+        await db
+          .update(newsletterSubscribers)
+          .set({ status: "active", updatedAt: new Date() })
+          .where(eq(newsletterSubscribers.email, email));
+      }
+      return { success: true, message: "Already subscribed", isNew: false };
+    }
+
+    // Insert new subscriber
+    await db.insert(newsletterSubscribers).values({
+      email,
+      status: "active",
+    });
+
+    return { success: true, message: "Successfully subscribed", isNew: true };
+  } catch (error) {
+    console.error("[Database] Failed to subscribe to newsletter:", error);
+    throw error;
+  }
+}
+
+export async function getNewsletterSubscribers() {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  return await db
+    .select()
+    .from(newsletterSubscribers)
+    .where(eq(newsletterSubscribers.status, "active"));
 }
 
 // TODO: add feature queries here as your schema grows.

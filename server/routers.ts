@@ -2,7 +2,7 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
-import { createAsycudaRequest, getAsycudaRequests, getAsycudaRequestById, updateAsycudaRequestStatus } from "./db";
+import { createAsycudaRequest, getAsycudaRequests, getAsycudaRequestById, updateAsycudaRequestStatus, subscribeToNewsletter, getNewsletterSubscribers } from "./db";
 import { z } from "zod";
 
 export const appRouter = router({
@@ -63,6 +63,20 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         return await updateAsycudaRequestStatus(input.id, input.status);
       }),
+  }),
+
+  newsletter: router({
+    subscribe: publicProcedure
+      .input(z.object({
+        email: z.string().email("البريد الإلكتروني غير صحيح"),
+      }))
+      .mutation(async ({ input }) => {
+        return await subscribeToNewsletter(input.email);
+      }),
+
+    getSubscribers: publicProcedure.query(async () => {
+      return await getNewsletterSubscribers();
+    }),
   }),
 });
 

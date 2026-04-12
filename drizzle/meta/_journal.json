@@ -15,6 +15,13 @@
       "when": 1773239514489,
       "tag": "0001_brainy_microbe",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1776032649756,
+      "tag": "0002_nappy_warhawk",
+      "breakpoints": true
     }
   ]
 }

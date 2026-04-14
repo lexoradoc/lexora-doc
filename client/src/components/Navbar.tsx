@@ -52,13 +52,13 @@ export default function Navbar() {
         }`}
       >
         <div className="container">
-          <div className="flex items-center justify-between h-16 lg:h-18">
+          <div className="flex items-center justify-between h-16 sm:h-18 lg:h-18">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 no-underline">
+            <Link href="/" className="flex items-center gap-2 no-underline flex-shrink-0">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
                 alt="Lexora Doc"
-                className="h-[3.125rem] w-auto object-contain"
+                className="h-10 sm:h-12 lg:h-[3.125rem] w-auto object-contain"
                 style={{ imageRendering: 'auto' }}
               />
             </Link>
@@ -112,15 +112,15 @@ export default function Navbar() {
 
             {/* Mobile Toggle */}
             <button
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
+              className={`lg:hidden p-2 rounded-lg transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center ${
                 showLight ? "hover:bg-white/10" : "hover:bg-[#2D2F8F]/5"
               }`}
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? (
-                <X className={`w-5 h-5 ${showLight ? "text-white" : "text-[#2D2F8F]"}`} />
+                <X className={`w-6 h-6 ${showLight ? "text-white" : "text-[#2D2F8F]"}`} />
               ) : (
-                <Menu className={`w-5 h-5 ${showLight ? "text-white" : "text-[#2D2F8F]"}`} />
+                <Menu className={`w-6 h-6 ${showLight ? "text-white" : "text-[#2D2F8F]"}`} />
               )}
             </button>
           </div>
@@ -140,7 +140,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors no-underline ${
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors no-underline min-h-[48px] flex items-center ${
                       location === link.href
                         ? "text-[#2D2F8F] bg-[#2D2F8F]/8 font-semibold"
                         : "text-gray-600 hover:text-[#2D2F8F] hover:bg-[#2D2F8F]/5"
@@ -149,25 +149,25 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <div className="pt-3 flex flex-col gap-2 px-4">
+                <div className="pt-4 flex flex-col gap-3 px-4 pb-4">
                   {/* ابدأ طلبك - Primary في الموبايل */}
                   <Button
-                    className="w-full bg-[#2D2F8F] hover:bg-[#232570] text-white font-semibold gap-2"
+                    className="w-full bg-[#2D2F8F] hover:bg-[#232570] text-white font-semibold gap-2 h-12 text-base"
                     onClick={() => {
                       setMobileOpen(false);
                       setShowRequestModal(true);
                     }}
                   >
-                    <FileText className="w-4 h-4" />
+                    <FileText className="w-5 h-5" />
                     ابدأ طلبك الآن
                   </Button>
                   <a
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border border-[#25D366] text-[#25D366] text-sm font-semibold no-underline hover:bg-[#25D366]/5 transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg border border-[#25D366] text-[#25D366] text-base font-semibold no-underline hover:bg-[#25D366]/5 transition-all min-h-[48px]"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <MessageCircle className="w-5 h-5" />
                     تواصل عبر واتساب
                   </a>
                 </div>

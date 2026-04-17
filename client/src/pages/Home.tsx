@@ -159,7 +159,7 @@ export default function Home() {
   return (
     <div dir="rtl">
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen sm:min-h-[92vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={HERO_BG} alt="Lexora Doc - مراجعة وتقديم ملفات الاستيراد في العراق" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-l from-[#1a1c5e]/95 via-[#2D2F8F]/85 to-[#1a1c5e]/70" />
@@ -175,40 +175,40 @@ export default function Home() {
           />
         </div>
 
-        <div className="container relative z-10 pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-24">
+        <div className="container relative z-10 pt-28 pb-24">
           <motion.div initial="hidden" animate="visible" className="max-w-3xl">
             <motion.div variants={fadeUp} custom={0}>
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/20 border border-[#B8972A]/40 mb-4 sm:mb-6 text-xs sm:text-sm">
-                <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#B8972A]" />
-                <span className="text-[#B8972A] font-semibold">الخبراء في نظام ASYCUDA العراق</span>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/20 border border-[#B8972A]/40 mb-6">
+                <Award className="w-3.5 h-3.5 text-[#B8972A]" />
+                <span className="text-[#B8972A] text-xs font-semibold">الخبراء في نظام ASYCUDA العراق</span>
               </span>
             </motion.div>
 
-            <motion.h1 variants={fadeUp} custom={1} className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6">
+            <motion.h1 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               <span className="text-[#B8972A]">Lexora Doc</span>{" "}
               إدارة ملفات الاستيراد{" "}
               والامتثال التجاري
             </motion.h1>
 
-            <motion.p variants={fadeUp} custom={2} className="text-base sm:text-lg text-white/75 leading-relaxed mb-6 sm:mb-8 max-w-2xl">
+            <motion.p variants={fadeUp} custom={2} className="text-lg text-white/75 leading-relaxed mb-8 max-w-2xl">
               نُعدّ ملفات الاستيراد والبيانات الجمركية بدقة احترافية وفق متطلبات نظام ASYCUDA وتعليمات البنك المركزي العراقي. سرعة وضمان وامتثال كامل.
             </motion.p>
 
-            <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4">
               {/* Primary CTA - ابدأ طلبك */}
               <Button
                 onClick={() => setShowRequestModal(true)}
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl bg-[#B8972A] text-white font-bold text-base hover:bg-[#a6861f] transition-all shadow-lg h-auto min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#B8972A] text-white font-bold text-base hover:bg-[#a6861f] transition-all shadow-lg h-auto"
               >
-                <FileText className="w-4 sm:w-5 h-4 sm:h-5" />
+                <FileText className="w-5 h-5" />
                 ابدأ طلبك الآن
               </Button>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl bg-white/10 border border-white/30 text-white font-semibold text-base hover:bg-white/20 transition-all no-underline min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/30 text-white font-semibold text-base hover:bg-white/20 transition-all no-underline"
               >
                 تعرف على خدماتنا
-                <ArrowLeft className="w-4 sm:w-5 h-4 sm:h-5" />
+                <ArrowLeft className="w-5 h-5" />
               </Link>
             </motion.div>
           </motion.div>
@@ -216,12 +216,12 @@ export default function Home() {
 
         {/* Stats Bar */}
         <div className="absolute bottom-0 left-0 right-0 bg-black/20 backdrop-blur-sm border-t border-white/10">
-          <div className="container py-3 sm:py-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div className="container py-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {stats.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-[#B8972A]">{stat.value}</div>
-                  <div className="text-white/60 text-xs mt-0.5 sm:mt-1">{stat.label}</div>
+                  <div className="text-2xl font-bold text-[#B8972A]">{stat.value}</div>
+                  <div className="text-white/60 text-xs mt-0.5">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -237,15 +237,15 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-4"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4"
           >
             <div className="flex flex-row items-center gap-3 md:items-start">
               <div className="w-10 h-10 min-w-[2.5rem] rounded-full bg-[#B8972A]/15 flex items-center justify-center flex-shrink-0">
                 <Landmark className="w-5 h-5 text-[#B8972A]" />
               </div>
               <div className="text-start">
-                <p className="text-[#2D2F8F] font-bold text-sm sm:text-base">وفق تعليمات البنك المركزي العراقي</p>
-                <p className="text-gray-500 text-xs sm:text-sm mt-0.5 sm:mt-1">جميع الملفات تُعدّ وفق الضوابط والتعليمات الصادرة عن البنك المركزي العراقي</p>
+                <p className="text-[#2D2F8F] font-bold text-sm">وفق تعليمات البنك المركزي العراقي</p>
+                <p className="text-gray-500 text-xs mt-0.5">جميع الملفات تُعدّ وفق الضوابط والتعليمات الصادرة عن البنك المركزي العراقي</p>
               </div>
             </div>
             <div className="flex flex-row items-center gap-3 md:items-start">
@@ -253,8 +253,8 @@ export default function Home() {
                 <Shield className="w-5 h-5 text-[#2D2F8F]" />
               </div>
               <div className="text-start">
-                <p className="text-[#2D2F8F] font-bold text-sm sm:text-base">امتثال كامل لنظام ASYCUDA World</p>
-                <p className="text-gray-500 text-xs sm:text-sm mt-0.5 sm:mt-1">إعداد البيانات الجمركية بما يتوافق مع متطلبات الهيئة العامة للجمارك</p>
+                <p className="text-[#2D2F8F] font-bold text-sm">امتثال كامل لنظام ASYCUDA World</p>
+                <p className="text-gray-500 text-xs mt-0.5">إعداد البيانات الجمركية بما يتوافق مع متطلبات الهيئة العامة للجمارك</p>
               </div>
             </div>
             <div className="flex flex-row items-center gap-3 md:items-start">
@@ -262,8 +262,8 @@ export default function Home() {
                 <CheckCircle2 className="w-5 h-5 text-emerald-600" />
               </div>
               <div className="text-start">
-                <p className="text-[#2D2F8F] font-bold text-sm sm:text-base">مراجعة دقيقة لكل مستند</p>
-                <p className="text-gray-500 text-xs sm:text-sm mt-0.5 sm:mt-1">فحص شامل للفاتورة وبوليصة الشحن وشهادة المنشأ</p>
+                <p className="text-[#2D2F8F] font-bold text-sm">مراجعة دقيقة لكل مستند</p>
+                <p className="text-gray-500 text-xs mt-0.5">فحص شامل للفاتورة وبوليصة الشحن وشهادة المنشأ</p>
               </div>
             </div>
           </motion.div>

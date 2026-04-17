@@ -369,23 +369,7 @@ select:focus {
     box-shadow: 0 4px 8px rgba(45, 47, 143, 0.08);
   }
   
-  /* Mobile Grid - Stack everything */
-  .grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
-  
-  .grid-cols-3 {
-    grid-template-columns: 1fr;
-  }
-  
-  .grid-cols-4 {
-    grid-template-columns: 1fr;
-  }
-  
-  /* Mobile Flex Direction */
-  .flex-row {
-    flex-direction: column;
-  }
+  /* Note: Grid and flex utilities are handled by Tailwind responsive classes in JSX (e.g., grid-cols-1 sm:grid-cols-2) */
   
   /* Mobile List Spacing */
   li {

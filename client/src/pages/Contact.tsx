@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/07844342200";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 const EMAIL_ADDRESS = "info@lexoradoc.com";
 const MGMT_EMAIL = "management@lexoradoc.com";
 

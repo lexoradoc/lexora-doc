@@ -16,7 +16,7 @@ import {
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const WHATSAPP_URL = "https://wa.me/07844342200";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

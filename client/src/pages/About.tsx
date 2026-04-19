@@ -21,7 +21,7 @@ import {
 import { motion } from "framer-motion";
 
 const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-about-8bFkRGXMt4KhfBrPYiPQgB.webp";
-const WHATSAPP_URL = "https://wa.me/07844342200";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

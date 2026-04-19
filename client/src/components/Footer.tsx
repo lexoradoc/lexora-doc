@@ -10,7 +10,7 @@ import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/07844342200";
+const WHATSAPP_URL = "https://wa.me/9647844342200";
 const MGMT_EMAIL = "management@lexoradoc.com";
 
 function NewsletterForm() {

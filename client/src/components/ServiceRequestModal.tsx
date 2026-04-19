@@ -8,7 +8,7 @@ import { X, MessageCircle, Send, CheckCircle2, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
-const WHATSAPP_NUMBER = "07844342200";
+const WHATSAPP_NUMBER = "9647844342200";
 
 const borderPorts = [
   "منفذ أم قصر",

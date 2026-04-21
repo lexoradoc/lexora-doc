@@ -153,7 +153,7 @@ export default function Home() {
   const [showRequestModal, setShowRequestModal] = useState(false);
 
   useEffect(() => {
-    document.title = "Lexora Doc - إدارة ملفات الاستيراد | ASYCUDA العراق | تخليص جمركي";
+    document.title = "ASYCUDA العراق | تخليص جمركي";
   }, []);
 
   return (

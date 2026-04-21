@@ -6,10 +6,20 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     // Scroll to top instantly on route change
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    // Fallback for mobile browsers
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    // Multiple methods to ensure compatibility across browsers and devices
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    // Immediate scroll
+    scrollToTop();
+
+    // Fallback: scroll after a small delay for mobile browsers
+    const timeoutId = setTimeout(scrollToTop, 0);
+
+    return () => clearTimeout(timeoutId);
   }, [location]);
 
   return null;

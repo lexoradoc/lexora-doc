@@ -430,7 +430,7 @@ export default function Home() {
       {/* ===== VISUAL SECTION - SHIPPING ===== */}
       <section className="relative h-72 md:h-96 overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-shipping-o624vchnH2KUH3QzEKXhhM.webp"
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/port-customs-nFuTCqP5SK7nyD9YkARf6s.webp"
           alt="ميناء تجاري دولي - إدارة ملفات الاستيراد والشحن"
           className="w-full h-full object-cover"
           loading="lazy"
@@ -571,7 +571,7 @@ export default function Home() {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-compliance-8Rakh87p6KTuzDZjg3i8HQ.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/asycuda-screen-YDDZNZFinCVjwjJtvp4xd4.webp"
                 alt="متخصص يحمل وثيقة امتثال تجاري معتمدة - Lexora Doc"
                 className="w-full h-80 object-cover"
                 loading="lazy"

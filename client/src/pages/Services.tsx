@@ -34,6 +34,7 @@ const services = [
   {
     icon: ShieldCheck,
     title: "خدمات ASYCUDA الجمركية",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/service-asycuda-7LuuDyBA8wcXixjBZdvFfy.webp",
     description:
       "إعداد البيان الجمركي المسبق والنهائي، مراجعة ملفات الاستيراد، والتأكد من الامتثال الكامل لمتطلبات نظام ASYCUDA World ومتطلبات البنك المركزي العراقي.",
     features: [
@@ -46,6 +47,7 @@ const services = [
   {
     icon: FileText,
     title: "مراجعة الوثائق وتدقيق HS Code",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/service-documents-AdPBakAUmhPKLcaeQGBshK.webp",
     description:
       "مراجعة دقيقة لجميع الوثائق المرفقة بملف الاستيراد وتدقيق تصنيف HS Code للبضائع. نتأكد من توافق جميع المستندات مع المتطلبات الجمركية والبنكية.",
     features: [
@@ -58,6 +60,7 @@ const services = [
   {
     icon: Landmark,
     title: "الامتثال لتعليمات البنك المركزي",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/service-bank-ajjuVYByUK8XH3sJuKD2TE.webp",
     description:
       "تنظيم ملفات التحويل المصرفي والاستيراد وفق التعليمات الصادرة عن البنك المركزي العراقي. نضمن أن جميع مستنداتك مستوفية للمتطلبات التنظيمية الحديثة.",
     features: [
@@ -70,6 +73,7 @@ const services = [
   {
     icon: Building2,
     title: "خدمات الشركات والمستوردين",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/service-corporate-Sr3hyjZYqRK87DgFztX3Ay.webp",
     description:
       "حلول متكاملة للشركات الكبرى والمستوردين في إدارة ملفات الاستيراد. نوفر دعماً مستمراً وإدارة احترافية لضمان سير العمليات التجارية بكفاءة عالية.",
     features: [
@@ -168,11 +172,22 @@ export default function Services() {
                 viewport={{ once: true, margin: "-50px" }}
                 variants={fadeUp}
                 custom={i}
-                className="bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-100 p-8 hover:shadow-lg hover:border-[#2D2F8F]/20 transition-all duration-300"
+                className="bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-[#2D2F8F]/20 transition-all duration-300"
               >
-                <div className={`w-12 h-12 rounded-xl bg-[#2D2F8F]/10 flex items-center justify-center mb-5`}>
-                  <service.icon className="w-6 h-6 text-[#2D2F8F]" />
+                {/* صورة الخدمة */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1c6e]/60 to-transparent" />
+                  <div className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <service.icon className="w-5 h-5 text-white" />
+                  </div>
                 </div>
+                <div className="p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {service.title}
                 </h3>
@@ -201,6 +216,7 @@ export default function Services() {
                   <MessageCircle className="w-4 h-4" />
                   اطلب الخدمة
                 </a>
+                </div>
               </motion.div>
             ))}
           </div>

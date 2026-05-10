@@ -571,7 +571,7 @@ export default function Home() {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/asycuda-screen-YDDZNZFinCVjwjJtvp4xd4.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/asycuda-suit-professional-76TjVeDcjenMoKQdPzZhSE.webp"
                 alt="متخصص يحمل وثيقة امتثال تجاري معتمدة - Lexora Doc"
                 className="w-full h-80 object-cover"
                 loading="lazy"

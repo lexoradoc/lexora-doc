@@ -290,12 +290,12 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
               {[
-                { name: "شركات صناعية", abbr: "صناعة", color: "#2D2F8F" },
-                { name: "شركات مقاولات", abbr: "مقاولات", color: "#1a6b3c" },
-                { name: "مواد غذائية", abbr: "غذائية", color: "#B8972A" },
-                { name: "أجهزة كهربائية", abbr: "كهربائية", color: "#7c3aed" },
-                { name: "قطع غيار", abbr: "سيارات", color: "#dc2626" },
-                { name: "أدوية وطب", abbr: "طبية", color: "#0891b2" },
+                { name: "شركات صناعية", Icon: Factory, color: "#2D2F8F", bg: "bg-blue-50" },
+                { name: "شركات مقاولات", Icon: HardHat, color: "#1a6b3c", bg: "bg-emerald-50" },
+                { name: "مواد غذائية", Icon: ShoppingBasket, color: "#B8972A", bg: "bg-amber-50" },
+                { name: "أجهزة كهربائية", Icon: Cpu, color: "#7c3aed", bg: "bg-purple-50" },
+                { name: "قطع غيار", Icon: Car, color: "#dc2626", bg: "bg-red-50" },
+                { name: "أدوية وطب", Icon: Stethoscope, color: "#0891b2", bg: "bg-cyan-50" },
               ].map((sector, i) => (
                 <motion.div
                   key={i}
@@ -306,10 +306,9 @@ export default function Home() {
                   className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border border-gray-100 bg-gray-50 hover:border-[#2D2F8F]/20 hover:bg-[#2D2F8F]/5 transition-all group"
                 >
                   <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm"
-                    style={{ backgroundColor: sector.color }}
+                    className={`w-12 h-12 rounded-full flex items-center justify-center shadow-sm ${sector.bg}`}
                   >
-                    {sector.abbr.charAt(0)}
+                    <sector.Icon className="w-6 h-6" style={{ color: sector.color }} />
                   </div>
                   <span className="text-xs font-semibold text-gray-700 text-center group-hover:text-[#2D2F8F] transition-colors">{sector.name}</span>
                 </motion.div>

@@ -260,30 +260,7 @@ export default function About() {
 
 
 
-      {/* Team Image Section */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative rounded-3xl overflow-hidden shadow-xl"
-          >
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/team-office-9TjhUcVzcJA3BjQp4FYZhF.webp"
-              alt="فريق Lexora Doc المتخصص في خدمات ASYCUDA والتخليص الجمركي"
-              className="w-full h-72 md:h-96 object-cover object-top"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1c5e]/70 via-transparent to-transparent" />
-            <div className="absolute bottom-0 right-0 p-8 text-white">
-              <p className="text-xl md:text-2xl font-bold drop-shadow-lg">فريق متخصص في خدمات ASYCUDA</p>
-              <p className="text-white/80 text-sm mt-2">خبراء في الوثائق الجمركية والامتثال التجاري</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Stats */}
       <section className="py-24 bg-gradient-to-br from-[#2D2F8F] to-[#1a1c5e]">

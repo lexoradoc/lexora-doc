@@ -270,6 +270,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== CLIENTS LOGOS BAR ===== */}
+      <section className="py-10 bg-white border-b border-gray-100">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-8">
+              قطاعات نخدمها في العراق
+            </p>
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+              {[
+                { name: "شركات صناعية", abbr: "صناعة", color: "#2D2F8F" },
+                { name: "شركات مقاولات", abbr: "مقاولات", color: "#1a6b3c" },
+                { name: "مواد غذائية", abbr: "غذائية", color: "#B8972A" },
+                { name: "أجهزة كهربائية", abbr: "كهربائية", color: "#7c3aed" },
+                { name: "قطع غيار", abbr: "سيارات", color: "#dc2626" },
+                { name: "أدوية وطب", abbr: "طبية", color: "#0891b2" },
+              ].map((sector, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07, duration: 0.4 }}
+                  className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border border-gray-100 bg-gray-50 hover:border-[#2D2F8F]/20 hover:bg-[#2D2F8F]/5 transition-all group"
+                >
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm"
+                    style={{ backgroundColor: sector.color }}
+                  >
+                    {sector.abbr.charAt(0)}
+                  </div>
+                  <span className="text-xs font-semibold text-gray-700 text-center group-hover:text-[#2D2F8F] transition-colors">{sector.name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ===== WORKFLOW INFOGRAPHIC ===== */}
       <section className="py-20 bg-white">
         <div className="container">

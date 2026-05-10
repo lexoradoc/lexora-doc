@@ -23,6 +23,12 @@ import {
   Send,
   FileSearch,
   PackageCheck,
+  Factory,
+  HardHat,
+  ShoppingBasket,
+  Cpu,
+  Car,
+  Stethoscope,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -104,12 +110,12 @@ const workflowSteps = [
 ];
 
 const trustedSectors = [
-  { icon: "🏭", label: "شركات صناعية" },
-  { icon: "🏗️", label: "شركات مقاولات" },
-  { icon: "🍎", label: "مستوردو مواد غذائية" },
-  { icon: "⚡", label: "مستوردو أجهزة كهربائية" },
-  { icon: "🚗", label: "مستوردو قطع غيار" },
-  { icon: "💊", label: "شركات أدوية ومستلزمات طبية" },
+  { icon: Factory, label: "شركات صناعية", color: "#2D2F8F", bg: "bg-blue-50" },
+  { icon: HardHat, label: "شركات مقاولات", color: "#1a6b3c", bg: "bg-emerald-50" },
+  { icon: ShoppingBasket, label: "مواد غذائية", color: "#B8972A", bg: "bg-amber-50" },
+  { icon: Cpu, label: "أجهزة كهربائية", color: "#7c3aed", bg: "bg-purple-50" },
+  { icon: Car, label: "قطع غيار", color: "#dc2626", bg: "bg-red-50" },
+  { icon: Stethoscope, label: "أدوية وطب", color: "#0891b2", bg: "bg-cyan-50" },
 ];
 
 const faqs = [
@@ -465,7 +471,9 @@ export default function Home() {
                 custom={i}
                 className="flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-[#2D2F8F]/20 hover:shadow-sm transition-all"
               >
-                <span className="text-2xl">{sector.icon}</span>
+                <div className={`w-12 h-12 rounded-xl ${sector.bg} flex items-center justify-center`}>
+                  <sector.icon className="w-6 h-6" style={{ color: sector.color }} />
+                </div>
                 <span className="text-xs font-semibold text-gray-700 text-center">{sector.label}</span>
               </motion.div>
             ))}

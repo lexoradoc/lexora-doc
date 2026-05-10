@@ -11,7 +11,7 @@ import { Menu, X, MessageCircle, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ServiceRequestModal from "@/components/ServiceRequestModal";
 
-const WHATSAPP_URL = "https://wa.me/9647844342200";
+const WHATSAPP_URL = "https://wa.me/9647807437788";
 
 const darkHeroPages = ["/"];
 

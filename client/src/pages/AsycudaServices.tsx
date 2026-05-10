@@ -26,7 +26,7 @@ import {
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const WHATSAPP_URL = "https://wa.me/9647844342200";
+const WHATSAPP_URL = "https://wa.me/9647807437788";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-asycuda-4YciusSe5PcehRrw5RyNET.webp";
 
 const fadeUp = {

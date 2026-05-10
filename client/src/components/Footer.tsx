@@ -10,7 +10,7 @@ import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/9647844342200";
+const WHATSAPP_URL = "https://wa.me/9647807437788";
 const MGMT_EMAIL = "management@lexoradoc.com";
 
 function NewsletterForm() {
@@ -198,9 +198,9 @@ export default function Footer() {
               <Mail className="w-3.5 h-3.5" />
               info@lexoradoc.com
             </a>
-            <a href="tel:07844342200" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
+            <a href="tel:07807437788" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
               <Phone className="w-3.5 h-3.5" />
-              07844342200
+              07807437788
             </a>
             <a href="https://linkedin.com/lexoradoc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
               <Linkedin className="w-3.5 h-3.5" />

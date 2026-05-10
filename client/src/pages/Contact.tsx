@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/9647844342200";
+const WHATSAPP_URL = "https://wa.me/9647807437788";
 const EMAIL_ADDRESS = "info@lexoradoc.com";
 const MGMT_EMAIL = "management@lexoradoc.com";
 
@@ -174,7 +174,7 @@ export default function Contact() {
                 <h3 className="font-bold text-gray-900 text-lg">معلومات التواصل</h3>
                 {[
                   { icon: Mail, title: "البريد الإلكتروني", value: EMAIL_ADDRESS, href: `mailto:${EMAIL_ADDRESS}`, color: "bg-blue-50 text-blue-600" },
-                  { icon: Phone, title: "الهاتف", value: "07844342200", href: "tel:07844342200", color: "bg-[#2D2F8F]/8 text-[#2D2F8F]" },
+                  { icon: Phone, title: "الهاتف", value: "07807437788", href: "tel:07807437788", color: "bg-[#2D2F8F]/8 text-[#2D2F8F]" },
                   { icon: MapPin, title: "الموقع", value: "بغداد، العراق", href: null, color: "bg-[#B8972A]/10 text-[#B8972A]" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-[#2D2F8F]/20 transition-all">

@@ -12,6 +12,7 @@ import { toast } from "sonner";
 
 const WHATSAPP_URL = "https://wa.me/9647807437788";
 const MGMT_EMAIL = "management@lexoradoc.com";
+const NEW_EMAIL = "info@aaa-iq.com";
 
 function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -194,6 +195,10 @@ export default function Footer() {
         {/* Contact Quick */}
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex flex-wrap gap-5 text-sm text-white/50">
+            <a href="mailto:info@aaa-iq.com" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
+              <Mail className="w-3.5 h-3.5" />
+              info@aaa-iq.com
+            </a>
             <a href="mailto:info@lexoradoc.com" className="flex items-center gap-1.5 hover:text-[#B8972A] transition-colors no-underline">
               <Mail className="w-3.5 h-3.5" />
               info@lexoradoc.com

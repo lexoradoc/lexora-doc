@@ -12,7 +12,8 @@ import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 const WHATSAPP_URL = "https://wa.me/9647807437788";
-const EMAIL_ADDRESS = "info@lexoradoc.com";
+const EMAIL_ADDRESS = "info@aaa-iq.com";
+const LEGACY_EMAIL = "info@lexoradoc.com";
 const MGMT_EMAIL = "management@lexoradoc.com";
 
 const fadeUp = {

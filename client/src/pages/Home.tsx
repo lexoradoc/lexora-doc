@@ -110,12 +110,12 @@ const workflowSteps = [
 ];
 
 const trustedSectors = [
-  { icon: Factory, label: "شركات صناعية", color: "#2D2F8F", bg: "bg-blue-50" },
-  { icon: HardHat, label: "شركات مقاولات", color: "#1a6b3c", bg: "bg-emerald-50" },
-  { icon: ShoppingBasket, label: "مواد غذائية", color: "#B8972A", bg: "bg-amber-50" },
-  { icon: Cpu, label: "أجهزة كهربائية", color: "#7c3aed", bg: "bg-purple-50" },
-  { icon: Car, label: "قطع غيار", color: "#dc2626", bg: "bg-red-50" },
-  { icon: Stethoscope, label: "أدوية وطب", color: "#0891b2", bg: "bg-cyan-50" },
+  { icon: Factory, label: "شركات صناعية", desc: "معدات ومواد أولية وخطوط إنتاج", color: "#2D2F8F", bg: "bg-blue-50" },
+  { icon: HardHat, label: "شركات مقاولات", desc: "مواد بناء ومعدات ثقيلة", color: "#1a6b3c", bg: "bg-emerald-50" },
+  { icon: ShoppingBasket, label: "مواد غذائية", desc: "منتجات غذائية ومشروبات", color: "#B8972A", bg: "bg-amber-50" },
+  { icon: Cpu, label: "أجهزة كهربائية", desc: "إلكترونيات وأجهزة منزلية", color: "#7c3aed", bg: "bg-purple-50" },
+  { icon: Car, label: "قطع غيار", desc: "سيارات وقطع غيار وإطارات", color: "#dc2626", bg: "bg-red-50" },
+  { icon: Stethoscope, label: "أدوية وطب", desc: "مستلزمات طبية وأدوية", color: "#0891b2", bg: "bg-cyan-50" },
 ];
 
 const faqs = [
@@ -167,21 +167,27 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_BG} alt="Lexora Doc - مراجعة وتقديم ملفات الاستيراد في العراق" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-l from-[#1a1c5e]/95 via-[#2D2F8F]/85 to-[#1a1c5e]/70" />
+          <img src={HERO_BG} alt="Lexora Doc - مراجعة وتقديم ملفات الاستيراد في العراق" className="w-full h-full object-cover scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0f1035]/95 via-[#1a1c5e]/88 to-[#2D2F8F]/75" />
         </div>
-
+        {/* Decorative geometric shapes */}
+        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[#B8972A]/5 blur-3xl" />
+          <div className="absolute bottom-32 right-20 w-96 h-96 rounded-full bg-[#2D2F8F]/10 blur-3xl" />
+          <div className="absolute top-1/2 left-1/3 w-px h-40 bg-gradient-to-b from-transparent via-[#B8972A]/20 to-transparent rotate-12" />
+          <div className="absolute top-1/3 right-1/4 w-px h-32 bg-gradient-to-b from-transparent via-white/10 to-transparent -rotate-12" />
+        </div>
         {/* Logo Watermark */}
         <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none overflow-hidden">
           <img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310519663385768314/aneV9kYBsf2QHxWJrr67QY/lexora-doc-logo-new_633afbb0.jpg"
             alt="لوجو Lexora Doc - خدمات التخليص الجمركي"
-            className="w-[500px] h-auto opacity-[0.05] select-none"
-            style={{ filter: 'brightness(2) grayscale(0.3)' }}
+            className="w-[600px] h-auto opacity-[0.04] select-none"
+            style={{ filter: 'brightness(2) grayscale(0.5)' }}
           />
         </div>
 
-        <div className="container relative z-10 pt-28 pb-24">
+        <div className="container relative z-10 pt-32 pb-28">
           <motion.div initial="hidden" animate="visible" className="max-w-3xl">
             <motion.div variants={fadeUp} custom={0}>
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8972A]/20 border border-[#B8972A]/40 mb-6">
@@ -190,13 +196,13 @@ export default function Home() {
               </span>
             </motion.div>
 
-            <motion.h1 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              <span className="text-[#B8972A]">Lexora Doc</span>{" "}
+            <motion.h1 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.2] mb-6">
+              <span className="text-[#B8972A] drop-shadow-[0_2px_10px_rgba(184,151,42,0.3)]">Lexora Doc</span>{" "}
+              <br className="hidden md:block" />
               إدارة ملفات الاستيراد{" "}
               والامتثال التجاري
             </motion.h1>
-
-            <motion.p variants={fadeUp} custom={2} className="text-lg text-white/75 leading-relaxed mb-8 max-w-2xl">
+            <motion.p variants={fadeUp} custom={2} className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
               نُعدّ ملفات الاستيراد والبيانات الجمركية بدقة احترافية وفق متطلبات نظام ASYCUDA وتعليمات البنك المركزي العراقي. سرعة وضمان وامتثال كامل.
             </motion.p>
 
@@ -221,13 +227,13 @@ export default function Home() {
         </div>
 
         {/* Stats Bar */}
-        <div className="absolute bottom-0 left-0 right-0 bg-black/20 backdrop-blur-sm border-t border-white/10">
-          <div className="container py-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-black/10 backdrop-blur-md border-t border-white/10">
+          <div className="container py-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-2xl font-bold text-[#B8972A]">{stat.value}</div>
-                  <div className="text-white/60 text-xs mt-0.5">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#B8972A] drop-shadow-[0_1px_4px_rgba(184,151,42,0.3)]">{stat.value}</div>
+                  <div className="text-white/70 text-xs mt-1 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -444,22 +450,22 @@ export default function Home() {
       </section>
 
       {/* ===== TRUSTED SECTORS ===== */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50/50">
         <div className="container">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="text-center mb-14"
           >
             <motion.h2 variants={fadeUp} custom={0} className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               قطاعات تثق بخدماتنا
             </motion.h2>
-            <motion.p variants={fadeUp} custom={1} className="text-gray-500 text-sm">
-              نخدم مختلف القطاعات التجارية والصناعية في العراق
+            <motion.p variants={fadeUp} custom={1} className="text-gray-500 text-base max-w-lg mx-auto">
+              نخدم مختلف القطاعات التجارية والصناعية في العراق بخبرة متخصصة لكل قطاع
             </motion.p>
           </motion.div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 max-w-5xl mx-auto">
             {trustedSectors.map((sector, i) => (
               <motion.div
                 key={i}
@@ -468,12 +474,13 @@ export default function Home() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-[#2D2F8F]/20 hover:shadow-sm transition-all"
+                className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-gray-100 hover:border-[#2D2F8F]/25 hover:shadow-lg hover:shadow-[#2D2F8F]/5 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className={`w-12 h-12 rounded-xl ${sector.bg} flex items-center justify-center`}>
-                  <sector.icon className="w-6 h-6" style={{ color: sector.color }} />
+                <div className={`w-14 h-14 rounded-2xl ${sector.bg} flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                  <sector.icon className="w-7 h-7" style={{ color: sector.color }} />
                 </div>
-                <span className="text-xs font-semibold text-gray-700 text-center">{sector.label}</span>
+                <span className="text-sm font-bold text-gray-800 text-center group-hover:text-[#2D2F8F] transition-colors">{sector.label}</span>
+                <span className="text-[11px] text-gray-400 text-center leading-tight">{sector.desc}</span>
               </motion.div>
             ))}
           </div>
